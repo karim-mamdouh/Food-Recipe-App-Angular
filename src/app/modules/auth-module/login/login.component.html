@@ -1,1 +1,69 @@
-<p>login works!</p>
+<section class="background-img pt-5">
+  <div class="container card w-50 mx-auto">
+    <h1 class="text-center pt-5">Login</h1>
+    <form [formGroup]="loginForm" class="p-5" (ngSubmit)="loginFormSubmit()">
+      <!-- Email input -->
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"
+          ><i class="fa-solid fa-envelope"></i
+        ></span>
+        <input
+          type="text"
+          pInputText
+          placeholder="Email"
+          aria-describedby="username2-help"
+          formControlName="email"
+        />
+      </div>
+      <!-- Email errors -->
+      <div
+        *ngIf="
+          (!controlValidation['email'].valid &&
+            controlValidation['email'].touched) ||
+          showErrors
+        "
+      >
+        <small
+          id="username2-help"
+          class="p-error block"
+          *ngIf="controlValidation['email'].errors?.['required']"
+          >This field is required.</small
+        >
+      </div>
+      <!-- Password input -->
+      <div class="p-inputgroup mt-4">
+        <span class="p-inputgroup-addon"><i class="fa-solid fa-key"></i></span>
+        <input
+          type="text"
+          pInputText
+          placeholder="Password"
+          formControlName="password"
+        />
+      </div>
+      <!-- Password errors -->
+      <div
+        *ngIf="
+          (!controlValidation['password'].valid &&
+            controlValidation['password'].touched) ||
+          showErrors
+        "
+      >
+        <small
+          id="username2-help"
+          class="p-error block"
+          *ngIf="controlValidation['password'].errors?.['required']"
+          >This field is required.</small
+        >
+      </div>
+      <!-- Submit form -->
+      <button
+        pButton
+        pRipple
+        type="submit"
+        label="Login"
+        class="p-button-raised p-button-success"
+      ></button>
+    </form>
+    <!-- Form ends -->
+  </div>
+</section>
