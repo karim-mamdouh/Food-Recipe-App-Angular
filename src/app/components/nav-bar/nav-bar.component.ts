@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import FoodCategories, {
+  FoodAPIService,
+} from 'src/app/services/food-api.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
-  constructor() {}
-  ngOnInit(): void {}
+  constructor(private _api: FoodAPIService) {}
+  ngOnInit(): void {
+    this._api.getSpecificRecipe('47746').subscribe((res) => {
+      console.log(res);
+    });
+  }
 }
