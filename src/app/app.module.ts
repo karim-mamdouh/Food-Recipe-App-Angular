@@ -26,7 +26,13 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FavListComponent } from './components/fav-list/fav-list.component';
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, FooterComponent, NotFoundComponent, FavListComponent],
+  declarations: [
+    AppComponent,
+    NavBarComponent,
+    FooterComponent,
+    NotFoundComponent,
+    FavListComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
