@@ -9,7 +9,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   showErrors: boolean = false; //Flag to show form errors
   loginForm: FormGroup = this._loginFormBuilder.group({
-    email: ['', [Validators.required, Validators.pattern('')]],
+    email: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern(
+          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/
+        ),
+      ],
+    ],
     password: ['', [Validators.required]],
   }); //Form group having all inputs with validators
 
