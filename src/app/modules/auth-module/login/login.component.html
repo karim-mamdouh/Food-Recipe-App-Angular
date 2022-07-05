@@ -1,15 +1,16 @@
-<section class="background-img pt-5">
-  <div class="container card w-50 mx-auto">
+<section class="background-img pt-4">
+  <div class="container test card w-25 mx-auto form-style">
     <h1 class="text-center pt-5">Login</h1>
-    <form [formGroup]="loginForm" class="p-5" (ngSubmit)="loginFormSubmit()">
+    <form [formGroup]="loginForm" class="p-1" (ngSubmit)="loginFormSubmit()">
       <!-- Email input -->
-      <div class="p-inputgroup">
+      <div class="p-inputgroup pt-5">
         <span class="p-inputgroup-addon"
           ><i class="fa-solid fa-envelope"></i
         ></span>
         <input
           type="text"
           pInputText
+          class="p-inputtext-sm"
           placeholder="Email"
           aria-describedby="username2-help"
           formControlName="email"
@@ -32,10 +33,11 @@
       </div>
       <!-- Password input -->
       <div class="p-inputgroup mt-4">
-        <span class="p-inputgroup-addon"><i class="fa-solid fa-key"></i></span>
+        <span class="p-inputgroup-addon"><i class="fa-solid fa-lock"></i></span>
         <input
           type="text"
           pInputText
+          class="p-inputtext-sm"
           placeholder="Password"
           formControlName="password"
         />
@@ -61,7 +63,7 @@
         pRipple
         type="submit"
         label="Login"
-        class="p-button-raised p-button-success"
+        class="p-button-raised p-button-danger w-100 mt-4"
       ></button>
     </form>
     <!-- Form ends -->
