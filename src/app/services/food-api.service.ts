@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { FoodCategories } from '../interfaces/food-category';
 
 @Injectable({
   providedIn: 'root',
@@ -21,12 +22,3 @@ export class FoodAPIService {
     return this._httpFood.get(`${this._baseURL}get?rId=${recipedID}`);
   }
 }
-
-//Enum for all food categories
-enum FoodCategories {
-  Pizza = 'pizza',
-  Salad = 'salad',
-  Beef = 'beef',
-}
-
-export default FoodCategories;
