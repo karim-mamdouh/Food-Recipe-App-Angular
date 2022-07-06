@@ -18,12 +18,17 @@ import { TooltipModule } from 'primeng/tooltip';
 import { DataViewModule } from 'primeng/dataview';
 import { HttpClientModule } from '@angular/common/http';
 import { PasswordModule } from 'primeng/password';
+import { DropdownModule } from 'primeng/dropdown';
 //Components
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FavListComponent } from './components/fav-list/fav-list.component';
+import { StoreModule } from '@ngrx/store';
+import { recipiesReducer } from './store/food-recipies/food-recipies.reducers';
+import { favouritesReducer } from './store/favourite-list/fav-list.reducers';
+import { ServerErrorComponent } from './components/server-error/server-error.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +37,7 @@ import { FavListComponent } from './components/fav-list/fav-list.component';
     FooterComponent,
     NotFoundComponent,
     FavListComponent,
+    ServerErrorComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +59,11 @@ import { FavListComponent } from './components/fav-list/fav-list.component';
     ProgressSpinnerModule,
     BadgeModule,
     HttpClientModule,
+    DropdownModule,
+    StoreModule.forRoot(
+      { recipies: recipiesReducer, favourites: favouritesReducer },
+      {}
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent],

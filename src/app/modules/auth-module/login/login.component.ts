@@ -30,10 +30,30 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   loginFormSubmit(): void {
-    if (!this.loginForm.errors) {
+    //check login form status => if validators not valid return false
+    if (this.loginForm.status === 'INVALID') {
       this.showErrors = true;
     } else {
-      console.log(this.loginForm.value);
+      // get user info from local storage
+      let user = localStorage.getItem('users');
+      if (user) {
+        //three cases=> null:if local storage has no users key
+        let userValidate = JSON.parse(user as string); // convert user array to object
+        //check if user input (email & password) are in the users array in the local storage //
+        let check = userValidate.some(
+          // true or false
+          (e: any) =>
+            e.email === this.loginForm.value.email &&
+            e.password === this.loginForm.value.password
+        );
+        if (check) {
+          alert('Welcome back');
+        } else {
+          alert('Please register');
+        }
+      } else {
+        alert('Please register');
+      }
     }
   }
 }

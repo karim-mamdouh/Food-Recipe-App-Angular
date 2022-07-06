@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 //Components
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FavListComponent } from './components/fav-list/fav-list.component';
+import { ServerErrorComponent } from './components/server-error/server-error.component';
 
 const routes: Routes = [
   //Default route
@@ -29,6 +30,8 @@ const routes: Routes = [
     path: 'fav-list',
     component: FavListComponent,
   },
+  //Server error route
+  { path: 'server-error', component: ServerErrorComponent },
   //Wrong path route
   { path: '**', component: NotFoundComponent },
 ];
