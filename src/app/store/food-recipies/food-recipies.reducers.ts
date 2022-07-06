@@ -1,12 +1,12 @@
 import { createReducer, on } from '@ngrx/store';
-import { FoodCategories } from 'src/app/interfaces/food-category';
+import { FoodCategories, Recipe } from 'src/app/interfaces/food-category';
 import { FoodReducerTemplate } from 'src/app/interfaces/store';
 import { fillRecipies } from './food-recipies.actions';
 
 //Recipes initial state
 const initialState: FoodReducerTemplate = {
   category: FoodCategories.Beef,
-  recipes: [],
+  recipes: [] as Array<Recipe>,
 };
 //Recipes reducer
 export const recipiesReducer = createReducer(

@@ -64,8 +64,6 @@ import { ServerErrorComponent } from './components/server-error/server-error.com
       { recipies: recipiesReducer, favourites: favouritesReducer },
       {}
     ),
-    
-
   ],
   providers: [],
   bootstrap: [AppComponent],
