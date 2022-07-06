@@ -1,0 +1,23 @@
+.card{
+    border: none;
+}
+
+//tabView alignment
+:host ::ng-deep .tabViewList{
+    ul{  
+        justify-content: center;  
+    }
+
+}
+
+//text hover color
+:host ::ng-deep .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
+    border-color: #ea4645 !important;
+    color: #ea4645 !important;
+}
+
+// small bar color 
+:host ::ng-deep .p-tabview .p-tabview-nav .p-tabview-ink-bar{
+    background-color: #ea4645  ;
+}
+
