@@ -18,6 +18,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { DataViewModule } from 'primeng/dataview';
 import { HttpClientModule } from '@angular/common/http';
 import { PasswordModule } from 'primeng/password';
+import { DropdownModule } from 'primeng/dropdown';
 //Components
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -58,10 +59,13 @@ import { ServerErrorComponent } from './components/server-error/server-error.com
     ProgressSpinnerModule,
     BadgeModule,
     HttpClientModule,
+    DropdownModule,
     StoreModule.forRoot(
       { recipies: recipiesReducer, favourites: favouritesReducer },
       {}
     ),
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent],
