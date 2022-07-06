@@ -10,7 +10,7 @@
           class="p-4"
         >
           <div class="row">
-            <!-- First name -->
+            <!-- First name input -->
             <div class="col-6">
               <div class="grid p-fluid">
                 <div class="col-12 md:col-4">
@@ -31,10 +31,12 @@
                     />
                   </div>
                 </div>
+                <!-- First name errors -->
                 <ng-template
                   [ngIf]="
-                    !controlValidation['firstName'].valid &&
-                    controlValidation['firstName'].touched
+                    (!controlValidation['firstName'].valid &&
+                      controlValidation['firstName'].touched) ||
+                    showErrors
                   "
                 >
                   <small
@@ -52,7 +54,7 @@
                 </ng-template>
               </div>
             </div>
-            <!-- last name -->
+            <!-- last name input-->
             <div class="col-6">
               <div class="grid p-fluid">
                 <div class="col-12 md:col-4">
@@ -75,8 +77,9 @@
                 </div>
                 <ng-template
                   [ngIf]="
-                    !controlValidation['lastName'].valid &&
-                    controlValidation['lastName'].touched
+                    (!controlValidation['lastName'].valid &&
+                      controlValidation['lastName'].touched) ||
+                    showErrors
                   "
                 >
                   <small
@@ -95,7 +98,7 @@
               </div>
             </div>
           </div>
-          <!-- User name -->
+          <!-- User name input -->
           <div class="grid p-fluid my-3">
             <div class="col-12 md:col-4">
               <div class="p-inputgroup">
@@ -105,7 +108,7 @@
                 <input
                   type="text"
                   placeholder="Username"
-                  pTooltip="at least 2 characters with no spaces"
+                  pTooltip="At least 6 characters, no white spaces & no special characters"
                   tooltipPosition="top"
                   type="text"
                   pInputText
@@ -115,10 +118,12 @@
                 />
               </div>
             </div>
+            <!-- User name errors -->
             <ng-template
               [ngIf]="
-                !controlValidation['userName'].valid &&
-                controlValidation['userName'].touched
+                (!controlValidation['userName'].valid &&
+                  controlValidation['userName'].touched) ||
+                showErrors
               "
             >
               <small
@@ -136,7 +141,7 @@
             </ng-template>
           </div>
 
-          <!-- Gender -->
+          <!-- Gender dropdown menu-->
           <div class="row">
             <div class="col-6">
               <div class="grid p-fluid">
@@ -151,8 +156,23 @@
                   </div>
                 </div>
               </div>
+              <!-- Gender errors -->
+              <ng-template
+                [ngIf]="
+                  (!controlValidation['gender'].valid &&
+                    controlValidation['gender'].touched) ||
+                  showErrors
+                "
+              >
+                <small
+                  id="username2-help"
+                  class="p-error block m-0 p-0"
+                  *ngIf="controlValidation['gender'].errors?.['required']"
+                  >This field is required.</small
+                >
+              </ng-template>
             </div>
-            <!-- BirthDate -->
+            <!-- Birthdate calender-->
             <div class="col-6">
               <div class="grid p-fluid">
                 <div class="col-12 md:col-4">
@@ -165,6 +185,21 @@
                   </div>
                 </div>
               </div>
+              <!-- Birthdate calender errors -->
+              <ng-template
+                [ngIf]="
+                  (!controlValidation['date'].valid &&
+                    controlValidation['date'].touched) ||
+                  showErrors
+                "
+              >
+                <small
+                  id="username2-help"
+                  class="p-error block m-0 p-0"
+                  *ngIf="controlValidation['date'].errors?.['required']"
+                  >This field is required.</small
+                >
+              </ng-template>
             </div>
           </div>
           <!-- Email -->
@@ -187,10 +222,12 @@
                 />
               </div>
             </div>
+            <!-- Email errors -->
             <ng-template
               [ngIf]="
-                !controlValidation['email'].valid &&
-                controlValidation['email'].touched
+                (!controlValidation['email'].valid &&
+                  controlValidation['email'].touched) ||
+                showErrors
               "
             >
               <small
@@ -208,72 +245,7 @@
             </ng-template>
           </div>
           <!-- password -->
-          <!-- <div class="row">
-            <p-password
-              [toggleMask]="true"
-              formControlName="password"
-              placeholder="Password"
-              styleClass="p-input-icon-right w-full"
-              [style]="{ width: '100%' }"
-              [inputStyle]="{ width: '100%' }"
-            ></p-password>
-
-            <ng-template
-              [ngIf]="
-                !controlValidation['password'].valid &&
-                controlValidation['password'].touched
-              "
-            >
-              <small
-                id="username2-help"
-                class="p-error block"
-                *ngIf="controlValidation['password'].errors?.['required']"
-                >This field is required.</small
-              >
-              <small
-                id="username2-help"
-                class="p-error block mb-0"
-                *ngIf="controlValidation['password'].errors?.['pattern']"
-                >Wrong password format.</small
-              >
-            </ng-template>
-            
-            <div class="col-6">
-                confirm fmfmfmfm
-              <p-password
-                [feedback]="false"
-                [toggleMask]="true"
-                formControlName="confirmPassword"
-                placeholder="Confirm password"
-                styleClass="p-input-icon-right"
-                [style]="{ width: '100%' }"
-                [inputStyle]="{ width: '100%' }"
-              ></p-password>
-            </div>
-
-            <ng-template
-              [ngIf]="
-                !controlValidation['confirmPassword'].valid &&
-                controlValidation['confirmPassword'].touched
-              "
-            >
-              <small
-                id="username2-help"
-                class="p-error block"
-                *ngIf="controlValidation['confirmPassword'].errors?.['required']"
-                >This field is required.</small
-              >
-              <small
-                id="username2-help"
-                class="p-error block"
-                *ngIf="controlValidation['confirmPassword'].errors?.['confirmPasswordValidator']"
-                >Not matched!</small
-              >
-            </ng-template>
-          </div> -->
-          <!-- second try -->
           <div class="row">
-            <!-- Password -->
             <div class="col-6">
               <div class="grid p-fluid">
                 <div class="col-12 md:col-4">
@@ -288,10 +260,12 @@
                     ></p-password>
                   </div>
                 </div>
+                <!-- Password errors -->
                 <ng-template
                   [ngIf]="
-                    !controlValidation['password'].valid &&
-                    controlValidation['password'].touched
+                    (!controlValidation['password'].valid &&
+                      controlValidation['password'].touched) ||
+                    showErrors
                   "
                 >
                   <small
@@ -309,7 +283,7 @@
                 </ng-template>
               </div>
             </div>
-            <!-- confirm -->
+            <!-- Confirm password -->
             <div class="col-6">
               <div class="grid p-fluid">
                 <div class="col-12 md:col-4">
@@ -325,10 +299,12 @@
                     ></p-password>
                   </div>
                 </div>
+                <!-- Confirm password errors -->
                 <ng-template
                   [ngIf]="
-                    !controlValidation['confirmPassword'].valid &&
-                    controlValidation['confirmPassword'].touched
+                    (!controlValidation['confirmPassword'].valid &&
+                      controlValidation['confirmPassword'].touched) ||
+                    showErrors
                   "
                 >
                   <small
@@ -347,25 +323,15 @@
               </div>
             </div>
           </div>
-          <!-- checkBox -->
-          <div class="row">
-            <!-- <div class="col-6">
-              <p-checkbox
-                formControlName="checkBox"
-                [binary]="true"
-                inputId="binary"
-              ></p-checkbox>
-            </div> -->
-            <!-- button -->
-            <div class="col-12 mt-5">
-              <button
-                pButton
-                pRipple
-                type="button"
-                label="Register"
-                class="p-button-raised p-button-danger w-100"
-              ></button>
-            </div>
+          <!-- Submit button -->
+          <div class="mt-5 row">
+            <button
+              pButton
+              pRipple
+              type="submit"
+              label="Register"
+              class="p-button-raised p-button-danger w-100"
+            ></button>
           </div>
         </form>
       </div>
