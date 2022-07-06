@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import FoodCategories from 'src/app/services/food-api.service';
 
 @Component({
   selector: 'app-not-found',
@@ -8,6 +7,5 @@ import FoodCategories from 'src/app/services/food-api.service';
 })
 export class NotFoundComponent implements OnInit {
   constructor() {}
-
   ngOnInit(): void {}
 }
