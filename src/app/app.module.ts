@@ -18,6 +18,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { DataViewModule } from 'primeng/dataview';
 import { HttpClientModule } from '@angular/common/http';
 import { PasswordModule } from 'primeng/password';
+import { DropdownModule } from 'primeng/dropdown';
 //Components
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -53,6 +54,7 @@ import { FavListComponent } from './components/fav-list/fav-list.component';
     ProgressSpinnerModule,
     BadgeModule,
     HttpClientModule,
+    DropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
