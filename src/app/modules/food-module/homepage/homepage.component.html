@@ -1,0 +1,6 @@
+<div *ngFor="let item of foodRecipes$ | async">
+    <img [src]="item.image_url" alt="img" style="aspect-ratio:1/1;width: 300px;">
+    <h2>{{item.title}}</h2>
+    <p>{{item.source_url}}</p>
+    <p>{{item.publisher}}</p>
+</div>
