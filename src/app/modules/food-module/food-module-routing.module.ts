@@ -1,14 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FoodcardComponent } from './foodcard/foodcard.component';
-import { FoodhomeComponent } from './foodhome/foodhome.component';
-import { FoodrecipeComponent } from './foodrecipe/foodrecipe.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 const routes: Routes = [
-  {path:'foodHome',component:FoodhomeComponent},
-  {path:'foodcard',component:FoodcardComponent},
-  {path:'foodrecipe',component:FoodrecipeComponent},
-
+  {path:'homepage',component:HomepageComponent},
 ];
 
 @NgModule({
