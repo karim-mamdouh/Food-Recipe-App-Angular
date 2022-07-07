@@ -9,16 +9,20 @@ import {ButtonModule} from 'primeng/button';
 
 //Components
 import { FoodModuleRoutingModule } from './food-module-routing.module';
+import { HomepageComponent } from './homepage/homepage.component';
 import { FoodhomeComponent } from './foodhome/foodhome.component';
 import { FoodcardComponent } from './foodcard/foodcard.component';
 import { FoodrecipeComponent } from './foodrecipe/foodrecipe.component';
 
 @NgModule({
   declarations: [
+    HomepageComponent,
     FoodhomeComponent,
     FoodcardComponent,
     FoodrecipeComponent
   ],
   imports: [CommonModule, FoodModuleRoutingModule, DropdownModule,TabViewModule,CardModule,ButtonModule],
+  exports:[HomepageComponent]
+
 })
 export class FoodModuleModule {}

@@ -7,6 +7,7 @@ import { fillRecipies } from './food-recipies.actions';
 const initialState: FoodReducerTemplate = {
   category: FoodCategories.Beef,
   recipes: [] as Array<Recipe>,
+  count: 0
 };
 //Recipes reducer
 export const recipiesReducer = createReducer(
@@ -18,6 +19,7 @@ export const recipiesReducer = createReducer(
       ...state,
       recipes: [...state.recipes, ...action.payload.recipes],
       category: action.payload.category,
+      count: action.payload.count,
     };
   })
 );
