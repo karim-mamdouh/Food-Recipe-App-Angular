@@ -9,9 +9,9 @@
   </div>
   <ng-template pTemplate="footer">
     <div class="d-flex justify-content-between">
-        <p class="my-auto">Rate: {{ foodData.social_rank }}%</p>
+        <p class="my-auto">Rate: {{ foodData.social_rank.toFixed() }}%</p>
         <!-- <p-button icon="pi pi-bookmark-fill" styleClass="favButton"></p-button> -->
-        <button pButton pRipple type="button" class="p-button-raised p-button-danger" icon="pi pi-bookmark-fill"></button>
+        <button  type="button" class="favButton "><i class="pi pi-bookmark"></i></button>
     </div>
   </ng-template>
 </p-card>

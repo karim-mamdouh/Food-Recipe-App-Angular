@@ -2,9 +2,13 @@
     box-shadow: 5px 10px 18px #888888;
     height: 550px;
 }
-:host ::ng-deep .p-button {
-  background-color: #ea4645;
-  border: none;
+.favButton{
+    background-color: #fff;
+    border: none;
+    i{
+        color: #ea4645;
+        font-size: 1.5rem;
+    }
 }
 img {
   height: 300px;
