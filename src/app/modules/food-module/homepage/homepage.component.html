@@ -3,7 +3,7 @@
     <p-tabView styleClass="tabViewList">
       <p-tabPanel header="Pizza">
         <div class="row pt-4">
-          <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 my-4" *ngFor="let recipe of foodRecipes$|async">
+          <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 my-4" *ngFor="let recipe of foodRecipiesFromStore.recipes">
             <app-foodcard [foodData]="recipe"></app-foodcard>
           </div>
         </div>

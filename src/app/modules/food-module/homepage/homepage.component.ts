@@ -12,24 +12,25 @@ import { fillRecipies } from 'src/app/store/food-recipies/food-recipies.actions'
   styleUrls: ['./homepage.component.scss'],
 })
 export class HomepageComponent implements OnInit {
-  foodRecipes$: Observable<Recipe[]>;
+  foodRecipiesFromStore = {} as FoodReducerTemplate;
 
-  constructor(private _foodApiService: FoodAPIService, private _store: Store<any>) {
-    // get recipes array which is inside recipies reducer
-    this.foodRecipes$ = this._store.select(state => state.recipies.recipes);
+  constructor(
+    private _foodApiService: FoodAPIService,
+    private _store: Store<{ recipies: FoodReducerTemplate }>) {
+    this._store.select('recipies').subscribe(res => {
+      this.foodRecipiesFromStore = res;
+    });
   }
 
   ngOnInit(): void {
     // Fetch Data from api 
-    this._foodApiService.getRecipiesByCategory(FoodCategories.Salad).subscribe(response => {
-      // Temp Object Holding the Data from the response
-      const foodRecipeTempObj: FoodReducerTemplate = {
-        category: FoodCategories.Salad,
-        recipes: response.recipes,
-        count: response.count
-      };
-      // Dispatching action and passing the temp obj as params
-      this._store.dispatch(fillRecipies({ payload: foodRecipeTempObj }));
+    this._foodApiService.getRecipiesByCategory(FoodCategories.Pizza).subscribe(response => {
+      // Dispatching action and passing the correct payload
+      this._store.dispatch(
+        fillRecipies({
+          payload: { category: FoodCategories.Pizza, recipes: response.recipes }
+        })
+      );
     });
   }
 }
