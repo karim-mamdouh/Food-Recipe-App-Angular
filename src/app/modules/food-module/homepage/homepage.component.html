@@ -1,6 +1,35 @@
-<div *ngFor="let item of foodRecipes$ | async">
-    <img [src]="item.image_url" alt="img" style="aspect-ratio:1/1;width: 300px;">
-    <h2>{{item.title}}</h2>
-    <p>{{item.source_url}}</p>
-    <p>{{item.publisher}}</p>
+<div class="container">
+  <div class="card my-5">
+    <p-tabView styleClass="tabViewList">
+      <p-tabPanel header="Pizza">
+        <div class="row pt-4">
+          <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 my-4" *ngFor="let recipe of foodRecipes$|async">
+            <app-foodcard [foodData]="recipe"></app-foodcard>
+          </div>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Salad">
+        <p>
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+          ab illo inventore veritatis et quasi architecto beatae vitae dicta
+          sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+          aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
+          qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit,
+          sed quia non numquam eius modi.
+        </p>
+      </p-tabPanel>
+      <p-tabPanel header="Beef">
+        <p>
+          At vero eos et accusamus et iusto odio dignissimos ducimus qui
+          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+          et quas molestias excepturi sint occaecati cupiditate non provident,
+          similique sunt in culpa qui officia deserunt mollitia animi, id est
+          laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
+          distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
+          cumque nihil impedit quo minus.
+        </p>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
 </div>
