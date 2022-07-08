@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { TabView } from 'primeng/tabview';
 import { FoodCategories, Recipe } from 'src/app/interfaces/food-category';
@@ -17,6 +18,7 @@ export class HomepageComponent implements OnInit {
   @ViewChild(TabView) tabview!: TabView;
 
   constructor(
+    private _router: Router,
     private _foodApiService: FoodAPIService,
     private _store: Store<{ recipies: FoodReducerTemplate }>) {
     this._store.select('recipies').subscribe(res => {
@@ -45,5 +47,12 @@ export class HomepageComponent implements OnInit {
         })
       );
     });
+  }
+
+  onCardClick(recipeID: string) {
+    this._router.navigate(
+      [`food/recipe/${recipeID}`],
+      { queryParams: { recipeID: `${recipeID}` } }     // To be modified later
+    );
   }
 }
