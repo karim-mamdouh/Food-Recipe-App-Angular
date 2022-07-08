@@ -1,12 +1,23 @@
-<div class="container">
+<div class="container ">
     <div class="d-flex justify-content-center my-5">
-        <p-fieldset legend="title">
-            <img src="" alt="">
-            <h5>publisher</h5>
-            <a href="">source_url</a>
-            <a href="">publisher_url</a>
-            <p>social_rank</p>
-            <p>ingredients</p>
+        <p-fieldset legend={{recipeDetails.title}}>
+            <div class="d-flex justify-content-center">
+                <img [src]="recipeDetails.image_url" class="rounded w-100 " alt="Food-Image">
+            </div>
+            
+            <div class="my-4">
+                <h4>ingredients</h4>
+                <div *ngFor="let ingredient of recipeDetails.ingredients">
+                    <p>{{ingredient}}</p>
+                </div>
+                <hr>
+                <h5>Information</h5>
+                <p>publisher: {{recipeDetails.publisher}}</p>
+                <div class="links d-flex ">
+                    <a [href]="recipeDetails.publisher_url" class="btn btn-danger mt-3">publisher_url</a>
+                    <a [href]="recipeDetails.source_url" class="btn btn-danger mx-4 mt-3">source_url</a>
+                </div>
+            </div>
         </p-fieldset>
     </div>
     

@@ -4,6 +4,7 @@ import { FoodrecipeComponent } from './foodrecipe/foodrecipe.component';
 import { HomepageComponent } from './homepage/homepage.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'homepage', pathMatch:'full'},
   { path: 'homepage', component: HomepageComponent },
   { path: 'recipe/:id', component: FoodrecipeComponent },
 ];
