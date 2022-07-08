@@ -1,3 +1,4 @@
+//General recipe interface
 export interface Recipe {
   image_url: string;
   publisher: string;
@@ -7,16 +8,18 @@ export interface Recipe {
   source_url: string;
   title: string;
 }
-
+//Recipe details interface
 export interface RecipeDetails extends Recipe {
   ingredients: Array<string>;
 }
-
-export interface FoodCategory {
-  count: number;
-  recipes: Array<Recipe>;
+//Favourite item interface
+export interface Favourite {
+  category: FoodCategories;
+  recipe: Recipe | RecipeDetails;
 }
-
-export interface SingleRecipe {
-  recipe: RecipeDetails;
+//Food categories to be used with API
+export enum FoodCategories {
+  Pizza = 'pizza',
+  Salad = 'salad',
+  Beef = 'beef',
 }
