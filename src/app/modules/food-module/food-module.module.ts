@@ -5,7 +5,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import {TabViewModule} from 'primeng/tabview';
 import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
-
+import {FieldsetModule} from 'primeng/fieldset';
 
 //Components
 import { FoodModuleRoutingModule } from './food-module-routing.module';
@@ -19,7 +19,7 @@ import { FoodrecipeComponent } from './foodrecipe/foodrecipe.component';
     FoodcardComponent,
     FoodrecipeComponent
   ],
-  imports: [CommonModule, FoodModuleRoutingModule, DropdownModule,TabViewModule,CardModule,ButtonModule],
+  imports: [CommonModule, FoodModuleRoutingModule, DropdownModule,TabViewModule,CardModule,ButtonModule,FieldsetModule],
   exports:[HomepageComponent]
 
 })
