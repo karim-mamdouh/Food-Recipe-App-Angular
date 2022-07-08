@@ -16,7 +16,7 @@ export const recipiesReducer = createReducer(
     console.log(action);
     return {
       ...state,
-      recipes: [...state.recipes, ...action.payload.recipes],
+      recipes: [...action.payload.recipes],
       category: action.payload.category,
     };
   })
