@@ -1,8 +1,9 @@
 {
-  "name": "FoodApp",
-  "short_name": "FoodApp",
+  "name": "Food Recipes",
+  "short_name": "Food Recipes",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
+  "description": "App to show food recipes based on categories",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

@@ -8,7 +8,7 @@ import { ServerErrorComponent } from './components/server-error/server-error.com
 
 const routes: Routes = [
   //Default route
-  { path: '', redirectTo: 'food', pathMatch: 'full' },
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
   //Auth route
   {
     path: 'auth',
