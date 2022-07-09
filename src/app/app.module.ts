@@ -31,6 +31,7 @@ import { favouritesReducer } from './store/favourite-list/fav-list.reducers';
 import { ServerErrorComponent } from './components/server-error/server-error.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { environment } from '../environments/environment';
     NotFoundComponent,
     FavListComponent,
     ServerErrorComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
