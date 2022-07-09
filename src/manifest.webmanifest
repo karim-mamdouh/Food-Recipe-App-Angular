@@ -5,6 +5,7 @@
   "background_color": "#fafafa",
   "description": "App to show food recipes based on categories",
   "display": "standalone",
+  "id": "./",
   "scope": "./",
   "start_url": "./",
   "icons": [
