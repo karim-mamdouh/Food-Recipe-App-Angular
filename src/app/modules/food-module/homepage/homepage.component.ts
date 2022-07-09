@@ -5,6 +5,7 @@ import { TabView } from 'primeng/tabview';
 import { FoodCategories, Recipe } from 'src/app/interfaces/food-category';
 import { FoodReducerTemplate } from 'src/app/interfaces/store';
 import { FoodAPIService } from 'src/app/services/food-api.service';
+import { ProgressLoaderService } from 'src/app/services/progress-loader/progress-loader.service';
 import { fillRecipies } from 'src/app/store/food-recipies/food-recipies.actions';
 
 @Component({
@@ -18,6 +19,7 @@ export class HomepageComponent implements OnInit {
   @ViewChild(TabView) tabview!: TabView;
 
   constructor(
+    public _progressLoaderService: ProgressLoaderService,
     private _router: Router,
     private _foodApiService: FoodAPIService,
     private _store: Store<{ recipies: FoodReducerTemplate }>) {
