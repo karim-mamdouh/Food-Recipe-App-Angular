@@ -29,6 +29,8 @@ import { StoreModule } from '@ngrx/store';
 import { recipiesReducer } from './store/food-recipies/food-recipies.reducers';
 import { favouritesReducer } from './store/favourite-list/fav-list.reducers';
 import { ServerErrorComponent } from './components/server-error/server-error.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -60,10 +62,16 @@ import { ServerErrorComponent } from './components/server-error/server-error.com
     BadgeModule,
     HttpClientModule,
     DropdownModule,
-    StoreModule.forRoot(
-      { recipies: recipiesReducer, favourites: favouritesReducer },
-      {}
-    ),
+    StoreModule.forRoot({
+      recipies: recipiesReducer,
+      favourites: favouritesReducer,
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

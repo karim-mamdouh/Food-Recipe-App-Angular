@@ -8,7 +8,7 @@ import {
 
 //Favourites inital state
 const initialState = {
-  favourites: [] as Favourite[],
+  favourites: [] as Array<Favourite>,
 };
 //Favourites reducer
 export const favouritesReducer = createReducer(
