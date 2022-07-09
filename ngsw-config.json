@@ -26,5 +26,17 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "food-api",
+      "urls": ["https://forkify-api.herokuapp.com/api/**"],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 30,
+        "maxAge": "1h",
+        "timeout": "5s"
+      }
+    }
   ]
 }
