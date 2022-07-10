@@ -8,7 +8,7 @@
     <!-- Spinner -->
     <div
       class="recipes-wrapper__tabview__spinner-container"
-      *ngIf="_progressLoaderService.isLoading | async; else content"
+      *ngIf="progressLoaderService.isLoading | async; else content"
     >
       <div class="spinner-border" role="status">
         <p class="visually-hidden">Loading...</p>
