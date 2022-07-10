@@ -8,3 +8,5 @@ export const fillRecipies = createAction(
     payload: FoodReducerTemplate;
   }>()
 );
+//Reset recipes array action
+export const resetRecipes = createAction('RESET_RECIPES');
