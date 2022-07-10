@@ -5,10 +5,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FavListComponent } from './components/fav-list/fav-list.component';
 import { ServerErrorComponent } from './components/server-error/server-error.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   //Default route
-  { path: '', redirectTo: 'food', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
   //Auth route
   {
     path: 'auth',
