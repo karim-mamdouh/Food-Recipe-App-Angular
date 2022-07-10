@@ -14,11 +14,13 @@ import { FoodcardComponent } from './components/food-card/foodcard.component';
 import { FoodrecipeComponent } from './components/recipe-details/foodrecipe.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { FavListComponent } from './components/fav-list/fav-list.component';
 
 @NgModule({
   declarations: [
     FoodcardComponent,
     FoodrecipeComponent,
+    FavListComponent,
     FooterComponent,
     CategoriesComponent,
   ],
