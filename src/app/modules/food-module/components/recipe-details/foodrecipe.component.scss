@@ -1,17 +1,17 @@
-:host ::ng-deep .p-fieldset{
+:host ::ng-deep .p-fieldset {
+  box-shadow: 5px 10px 18px #888888;
+  img {
     box-shadow: 5px 10px 18px #888888;
-    img{
-        box-shadow: 5px 10px 18px #888888;
-    }
+  }
 }
 .background-img {
-    background-image: url("../../../../../assets/images/login-background.jpg");
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+  background-image: url("../../../../../assets/images/login-background.jpg");
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-  :host ::ng-deep .p-rating .p-rating-icon.pi-star-fill{
-    color: #ea4645 !important;
-  }
+:host ::ng-deep .p-rating .p-rating-icon.pi-star-fill {
+  color: #ea4645 !important;
+}

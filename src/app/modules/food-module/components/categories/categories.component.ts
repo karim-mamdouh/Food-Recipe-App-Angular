@@ -6,8 +6,11 @@ import { Observable } from 'rxjs';
 import { FoodCategories } from 'src/app/interfaces/food-category';
 import { FoodReducerTemplate } from 'src/app/interfaces/store';
 import { FoodAPIService } from 'src/app/services/food-api.service';
-import { ProgressLoaderService } from 'src/app/services/progress-loader/progress-loader.service';
-import { fillRecipies } from 'src/app/store/food-recipies/food-recipies.actions';
+import { ProgressLoaderService } from 'src/app/services/progress-loader.service';
+import {
+  fillRecipies,
+  resetRecipes,
+} from 'src/app/store/food-recipies/food-recipies.actions';
 
 @Component({
   selector: 'app-categories',
@@ -40,6 +43,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   fetchDataFromApi(category: string) {
+    this._store.dispatch(resetRecipes());
     // Fetch Data from api
     const indexOfCategoryInEnum = Object.keys(FoodCategories).indexOf(category);
     this._foodApiService
