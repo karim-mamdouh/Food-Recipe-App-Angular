@@ -13,7 +13,6 @@ export const recipiesReducer = createReducer(
   initialState,
   //Fill recipes action
   on(fillRecipies, (state, action) => {
-    console.log(action);
     return {
       ...state,
       recipes: [...state.recipes, ...action.payload.recipes],

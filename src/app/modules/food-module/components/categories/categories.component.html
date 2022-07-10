@@ -1,0 +1,59 @@
+<div class="recipes-wrapper container">
+  <!-- Tap View -->
+  <p-tabView
+    class="recipes-wrapper__tabview"
+    (onChange)="onTapChange($event.index)"
+    styleClass="tabViewList"
+  >
+    <!-- Spinner -->
+    <div
+      class="recipes-wrapper__tabview__spinner-container"
+      *ngIf="progressLoaderService.isLoading | async; else content"
+    >
+      <div class="spinner-border" role="status">
+        <p class="visually-hidden">Loading...</p>
+      </div>
+    </div>
+    <!-- Taps -->
+    <!-- Pizza tab -->
+    <p-tabPanel header="Pizza" [selected]="true">
+      <ng-template #content>
+        <div class="row recipes-wrapper__tabview__content-panel pt-4">
+          <app-foodcard
+            *ngFor="let recipe of (recipeObservable | async)?.recipes"
+            (click)="onCardClick(recipe.recipe_id)"
+            [foodData]="recipe"
+            class="col-lg-3 col-md-4 col-sm-12 col-xs-12 my-4"
+          ></app-foodcard>
+        </div>
+      </ng-template>
+    </p-tabPanel>
+    <!-- Salad tab -->
+    <p-tabPanel header="Salad">
+      <ng-template #content>
+        <div class="row recipes-wrapper__tabview__content-panel pt-4">
+          <app-foodcard
+            *ngFor="let recipe of (recipeObservable | async)?.recipes"
+            (click)="onCardClick(recipe.recipe_id)"
+            [foodData]="recipe"
+            class="col-lg-3 col-md-4 col-sm-12 col-xs-12 my-4"
+          ></app-foodcard>
+        </div>
+      </ng-template>
+    </p-tabPanel>
+    <!-- Beef tab -->
+    <p-tabPanel header="Beef">
+      <ng-template #content>
+        <div class="row recipes-wrapper__tabview__content-panel pt-4">
+          <app-foodcard
+            class="col-lg-3 col-md-4 col-sm-12 col-xs-12 my-4"
+            *ngFor="let recipe of (recipeObservable | async)?.recipes"
+            (click)="onCardClick(recipe.recipe_id)"
+            [foodData]="recipe"
+          ></app-foodcard>
+        </div>
+      </ng-template>
+    </p-tabPanel>
+  </p-tabView>
+</div>
+<app-footer></app-footer>

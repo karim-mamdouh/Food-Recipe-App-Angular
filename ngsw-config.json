@@ -5,14 +5,9 @@
     {
       "name": "app",
       "installMode": "prefetch",
+      "updateMode": "prefetch",
       "resources": {
-        "files": [
-          "/favicon.ico",
-          "/index.html",
-          "/manifest.webmanifest",
-          "/*.css",
-          "/*.js"
-        ],
+        "files": ["/index.html", "/manifest.webmanifest", "/*.css", "/*.js"],
         "urls": ["https://fonts.googleapis.com/**", "https://fonts.gstatic.com"]
       }
     },
@@ -31,7 +26,10 @@
   "dataGroups": [
     {
       "name": "food-api",
-      "urls": ["https://forkify-api.herokuapp.com/api/**"],
+      "urls": [
+        "https://forkify-api.herokuapp.com/api/**",
+        "http://forkify-api.herokuapp.com/images/**"
+      ],
       "cacheConfig": {
         "strategy": "freshness",
         "maxSize": 30,
