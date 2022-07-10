@@ -3,7 +3,7 @@
     <p-tabView class="recipes-wrapper__tabview" (onChange)="onTapChange($event.index)" styleClass="tabViewList">
 
       <!-- Spinner -->
-      <div class="recipes-wrapper__tabview__spinner-container" *ngIf="_progressLoaderService.isLoading|async;else content">
+      <div class="recipes-wrapper__tabview__spinner-container" *ngIf="progressLoaderService.isLoading|async;else content">
         <div class="spinner-border" role="status">
           <p class="visually-hidden">Loading...</p>
         </div>

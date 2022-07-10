@@ -19,7 +19,7 @@ export class HomepageComponent implements OnInit {
   @ViewChild(TabView) tabview!: TabView;
 
   constructor(
-    public _progressLoaderService: ProgressLoaderService,
+    public progressLoaderService: ProgressLoaderService,
     private _router: Router,
     private _foodApiService: FoodAPIService,
     private _store: Store<{ recipies: FoodReducerTemplate }>) {

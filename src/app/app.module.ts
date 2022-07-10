@@ -16,7 +16,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
 import { DataViewModule } from 'primeng/dataview';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { PasswordModule } from 'primeng/password';
 import { DropdownModule } from 'primeng/dropdown';
 //Components
@@ -29,7 +29,7 @@ import { StoreModule } from '@ngrx/store';
 import { recipiesReducer } from './store/food-recipies/food-recipies.reducers';
 import { favouritesReducer } from './store/favourite-list/fav-list.reducers';
 import { ServerErrorComponent } from './components/server-error/server-error.component';
-import { InterceptorService } from './services/interceptor/interceptor.service';
+import { interceptorProviders } from './services/interceptor/interceptor-providers';
 
 @NgModule({
   declarations: [
@@ -66,7 +66,7 @@ import { InterceptorService } from './services/interceptor/interceptor.service';
       {}
     ),
   ],
-  providers: [{provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true}],
+  providers: [interceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
