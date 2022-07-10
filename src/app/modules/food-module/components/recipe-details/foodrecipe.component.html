@@ -1,0 +1,28 @@
+<section class=" background-img d-flex justify-content-center py-5" *ngIf="recipeDetails">
+    <!-- Food Recipe container -->
+        <p-fieldset legend={{recipeDetails.title}}>
+            <!-- Recipe image -->
+            <figure class="d-flex justify-content-center">
+                <img [src]="recipeDetails.image_url" class="rounded w-100 img-fluid " alt="Food-Image">
+            </figure>
+
+            <!-- Recipe Details and ingredients -->
+            <div class="my-4">
+                <!-- Ingredients list -->
+                <h4>Ingredients</h4>
+                <ul class="my-3">
+                    <li *ngFor="let ingredient of recipeDetails.ingredients">{{ingredient}}</li>
+                </ul>
+                <hr>
+                <!-- Recipe information -->
+                <h5>Information</h5>
+                <p>Publisher: {{recipeDetails.publisher}}</p>
+                <p-rating [(ngModel)]="val2" [cancel]="false"></p-rating>
+                <div class="links d-flex ">
+                    <a [href]="recipeDetails.publisher_url" class="btn btn-danger mt-3">Visit publisher</a>
+                    <a [href]="recipeDetails.source_url" class="btn btn-danger mx-4 mt-3">More details</a>
+                </div>
+            </div>
+        </p-fieldset>
+    </section>
+<app-footer></app-footer>
