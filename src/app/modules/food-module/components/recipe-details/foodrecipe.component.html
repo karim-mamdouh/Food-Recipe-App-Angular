@@ -13,6 +13,7 @@
                 <hr>
                 <h5>Information</h5>
                 <p>publisher: {{recipeDetails.publisher}}</p>
+                <p-rating [(ngModel)]="val2" [cancel]="false"></p-rating>
                 <div class="links d-flex ">
                     <a [href]="recipeDetails.publisher_url" class="btn btn-danger mt-3">publisher_url</a>
                     <a [href]="recipeDetails.source_url" class="btn btn-danger mx-4 mt-3">source_url</a>
@@ -22,3 +23,4 @@
     </div>
     
 </div>
+<app-footer></app-footer>

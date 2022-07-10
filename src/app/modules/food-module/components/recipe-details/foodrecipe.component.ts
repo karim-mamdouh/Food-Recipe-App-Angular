@@ -10,6 +10,7 @@ import { FoodAPIService } from 'src/app/services/food-api.service';
 })
 
 export class FoodrecipeComponent implements OnInit {
+  val2: number = 0;
   recipeID!: string;
   recipeDetails = {} as RecipeDetails;
 

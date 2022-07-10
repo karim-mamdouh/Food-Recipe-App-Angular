@@ -11,3 +11,7 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+
+  :host ::ng-deep .p-rating .p-rating-icon.pi-star-fill{
+    color: #ea4645 !important;
+  }

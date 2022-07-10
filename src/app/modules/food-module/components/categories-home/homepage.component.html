@@ -13,36 +13,27 @@
       <p-tabPanel header="Pizza" [selected]="true">
         <ng-template #content>
           <div class="row recipes-wrapper__tabview__content-panel pt-4">
-            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 my-4" *ngFor="let recipe of foodRecipiesFromStore">
-              <app-foodcard (click)="onCardClick(recipe.recipe_id)" [foodData]="recipe"></app-foodcard>
-            </div>
+              <app-foodcard  *ngFor="let recipe of foodRecipiesFromStore" (click)="onCardClick(recipe.recipe_id)" [foodData]="recipe"  class="col-lg-3 col-md-4 col-sm-12 col-xs-12 my-4"></app-foodcard>
           </div>
         </ng-template>
-
       </p-tabPanel>
 
       <p-tabPanel header="Salad">
         <ng-template #content>
           <div class="row recipes-wrapper__tabview__content-panel pt-4">
-            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 my-4" *ngFor="let recipe of foodRecipiesFromStore">
-              <app-foodcard (click)="onCardClick(recipe.recipe_id)" [foodData]="recipe"></app-foodcard>
-            </div>
+              <app-foodcard  *ngFor="let recipe of foodRecipiesFromStore" (click)="onCardClick(recipe.recipe_id)" [foodData]="recipe" class="col-lg-3 col-md-4 col-sm-12 col-xs-12 my-4"></app-foodcard>
           </div>
         </ng-template>
-
       </p-tabPanel>
 
       <p-tabPanel header="Beef">
         <ng-template #content>
           <div class="row recipes-wrapper__tabview__content-panel pt-4">
-            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 my-4" *ngFor="let recipe of foodRecipiesFromStore">
-              <app-foodcard (click)="onCardClick(recipe.recipe_id)" [foodData]="recipe"></app-foodcard>
-            </div>
+              <app-foodcard class="col-lg-3 col-md-4 col-sm-12 col-xs-12 my-4" *ngFor="let recipe of foodRecipiesFromStore" (click)="onCardClick(recipe.recipe_id)" [foodData]="recipe"></app-foodcard>
           </div>
         </ng-template>
-
       </p-tabPanel>
-
     </p-tabView>
 
   </div>
+  <app-footer></app-footer>

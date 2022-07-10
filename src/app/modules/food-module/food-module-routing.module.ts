@@ -1,11 +1,16 @@
+//Modules
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FoodrecipeComponent } from './foodrecipe/foodrecipe.component';
-import { HomepageComponent } from './homepage/homepage.component';
+//Components
+import { FoodrecipeComponent } from './components/recipe-details/foodrecipe.component';
+import { HomepageComponent } from './components/categories-home/homepage.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'homepage', pathMatch:'full'},
-  { path: 'homepage', component: HomepageComponent },
+  //Default route
+  { path: '', redirectTo: 'categories', pathMatch:'full'},
+  //Categories route
+  { path: 'categories', component: HomepageComponent },
+  //Recipe details route
   { path: 'recipe/:id', component: FoodrecipeComponent },
 ];
 

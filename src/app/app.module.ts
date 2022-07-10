@@ -22,7 +22,6 @@ import { DropdownModule } from 'primeng/dropdown';
 //Components
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FavListComponent } from './components/fav-list/fav-list.component';
 import { StoreModule } from '@ngrx/store';
@@ -35,7 +34,6 @@ import { InterceptorService } from './services/interceptor/interceptor.service';
   declarations: [
     AppComponent,
     NavBarComponent,
-    FooterComponent,
     NotFoundComponent,
     FavListComponent,
     ServerErrorComponent,
