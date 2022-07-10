@@ -22,7 +22,6 @@ import { DropdownModule } from 'primeng/dropdown';
 //Components
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FavListComponent } from './components/fav-list/fav-list.component';
 import { StoreModule } from '@ngrx/store';
@@ -32,12 +31,12 @@ import { ServerErrorComponent } from './components/server-error/server-error.com
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './components/home/home.component';
+import { interceptorProviders } from './services/interceptor/interceptor-providers';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    FooterComponent,
     NotFoundComponent,
     FavListComponent,
     ServerErrorComponent,
@@ -75,7 +74,7 @@ import { HomeComponent } from './components/home/home.component';
       registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
-  providers: [],
+  providers: [interceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
