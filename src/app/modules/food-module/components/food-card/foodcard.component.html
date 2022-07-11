@@ -1,14 +1,14 @@
 <p-card styleClass="p-card-shadow" *ngIf="foodData">
-  <!-- Recipe image -->
-  <ng-template pTemplate="header">
+  <div (click)="onCardClick(foodData.recipe_id)">
+    <!-- Recipe image -->
     <figure>
       <img alt="Card" [src]="foodData.image_url" class="rounded img-fluid" />
     </figure>
-  </ng-template>
-  <!-- Recipe title -->
-  <div class="card-data">
-    <h5>{{ foodData.title }}</h5>
-    <h6 class="my-4">{{ foodData.publisher }}</h6>
+    <!-- Recipe title -->
+    <div class="card-data">
+      <h5>{{ foodData.title }}</h5>
+      <h6 class="my-4">{{ foodData.publisher }}</h6>
+    </div>
   </div>
   <!-- Recipe details -->
   <ng-template pTemplate="footer">

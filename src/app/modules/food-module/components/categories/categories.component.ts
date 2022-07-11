@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+
 import { Store } from '@ngrx/store';
 import { TabView } from 'primeng/tabview';
 import { Observable } from 'rxjs';
@@ -25,7 +25,6 @@ export class CategoriesComponent implements OnInit {
 
   constructor(
     public progressLoaderService: ProgressLoaderService,
-    private _router: Router,
     private _foodApiService: FoodAPIService,
     private _store: Store<{ recipies: FoodReducerTemplate }>
   ) {
@@ -61,9 +60,5 @@ export class CategoriesComponent implements OnInit {
           })
         );
       });
-  }
-
-  onCardClick(recipeID: string): void {
-    this._router.navigate([`food/recipe/${recipeID}`]);
   }
 }
