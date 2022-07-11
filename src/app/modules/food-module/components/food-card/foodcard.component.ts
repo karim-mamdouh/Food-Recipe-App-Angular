@@ -14,7 +14,9 @@ import { addFavourite } from 'src/app/store/favourite-list/fav-list.actions';
   styleUrls: ['./foodcard.component.scss'],
 })
 export class FoodcardComponent implements OnInit {
+  //Recipe to be viewed incoming to component
   @Input() foodData: Recipe | null = null;
+  //Recipe category incoming to component
   @Input() foodCategory: FoodCategories | null = null;
 
   constructor(
@@ -23,6 +25,7 @@ export class FoodcardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
+  //Function that adds recipe object to favourite store
   addToFavourites(): void {
     this._favStore.dispatch(
       addFavourite({
@@ -30,6 +33,7 @@ export class FoodcardComponent implements OnInit {
       })
     );
   }
+  //Function that navigates to recipe details based on input recipeID
   onCardClick(recipeID: string): void {
     this._router.navigate([`food/recipe/${recipeID}`]);
   }
