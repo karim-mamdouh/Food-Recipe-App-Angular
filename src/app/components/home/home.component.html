@@ -1,8 +1,8 @@
 <section>
   <!-- search form -->
-  <div class="background-img">
+  <div class="background-img py-5">
     <div class="container-fluid w-25">
-      <form class="d-flex py-5" role="search">
+      <form class="d-flex" role="search">
         <input
           class="form-control me-2"
           type="search"
@@ -12,29 +12,120 @@
       </form>
     </div>
   </div>
-
-  <!--Browse Categories  -->
-  <div class="container py-5">
-    <h3>Browse By Categories</h3>
-    <div class="BrawseCategoriesButtons d-flex my-4">
-      <div class="CategoryRouter me-4 text-center">
-        <a routerLink="/food">
-          <img src="../../../assets/images/pizza.jpg" alt="pizza" />
-          <p class="my-3">Pizza</p>
-        </a>
-      </div>
-      <div class="CategoryRouter me-4 text-center">
-        <a routerLink="/food">
-          <img src="../../../assets/images/salad.jpg" alt="salad" />
-          <p class="my-3">Salad</p>
-        </a>
-      </div>
-      <div class="CategoryRouter me-4 text-center">
-        <a routerLink="/food">
-          <img src="../../../assets/images/beef.jpg" alt="beef" />
-          <p class="my-3">Beef</p>
-        </a>
+  <div class="container">
+    <!--Browse Categories  -->
+    <div class="container py-5">
+      <h3>Browse By Categories</h3>
+      <div class="BrawseCategoriesButtons d-flex my-4">
+        <div class="CategoryRouter me-4 text-center">
+          <a routerLink="/food">
+            <img src="../../../assets/images/pizza.jpg" alt="pizza" />
+            <p class="my-3">Pizza</p>
+          </a>
+        </div>
+        <div class="CategoryRouter me-4 text-center">
+          <a routerLink="/food">
+            <img src="../../../assets/images/salad.jpg" alt="salad" />
+            <p class="my-3">Salad</p>
+          </a>
+        </div>
+        <div class="CategoryRouter me-4 text-center">
+          <a routerLink="/food">
+            <img src="../../../assets/images/beef.jpg" alt="beef" />
+            <p class="my-3">Beef</p>
+          </a>
+        </div>
       </div>
     </div>
+    <!-- Featured pizza section -->
+    <h2 class="text-center my-4">Featured Pizza Recipes</h2>
+    <p-carousel
+      *ngIf="pizzaRecipes"
+      [value]="pizzaRecipes.recipes"
+      styleClass="custom-carousel"
+      [numVisible]="3"
+      [numScroll]="1"
+      [circular]="true"
+      [autoplayInterval]="3000"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-recipe pTemplate="item">
+        <div class="product-item">
+          <div class="product-item-content">
+            <div class="mb-3">
+              <img
+                [src]="recipe.image_url"
+                [alt]="recipe.title"
+                class="product-image"
+              />
+            </div>
+            <div class="container">
+              <h5 class="mb-1">{{ recipe.title }}</h5>
+              <h6 class="mb-3">{{ recipe.publisher }}</h6>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+    <!-- Fatured beef section -->
+    <h2 class="text-center my-4">Featured Beef Recipes</h2>
+    <p-carousel
+      *ngIf="beefRecipes"
+      [value]="beefRecipes.recipes"
+      styleClass="custom-carousel"
+      [numVisible]="3"
+      [numScroll]="1"
+      [circular]="true"
+      [autoplayInterval]="3000"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-recipe pTemplate="item">
+        <div class="product-item">
+          <div class="product-item-content">
+            <div class="mb-3">
+              <img
+                [src]="recipe.image_url"
+                [alt]="recipe.title"
+                class="product-image"
+              />
+            </div>
+            <div class="container">
+              <h5 class="mb-1">{{ recipe.title }}</h5>
+              <h6 class="mb-3">{{ recipe.publisher }}</h6>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+    <!-- Featured salad section -->
+    <h2 class="text-center my-4">Featured Salad Recipes</h2>
+    <p-carousel
+      *ngIf="saladRecipes"
+      [value]="saladRecipes.recipes"
+      styleClass="custom-carousel"
+      [numVisible]="3"
+      [numScroll]="1"
+      [circular]="true"
+      [autoplayInterval]="3000"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-recipe pTemplate="item">
+        <div class="product-item">
+          <div class="product-item-content">
+            <div class="mb-3">
+              <img
+                [src]="recipe.image_url"
+                [alt]="recipe.title"
+                class="product-image"
+              />
+            </div>
+            <div class="container">
+              <h5 class="mb-2">{{ recipe.title }}</h5>
+              <h6 class="mb-3">{{ recipe.publisher }}</h6>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
   </div>
 </section>
