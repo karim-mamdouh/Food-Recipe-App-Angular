@@ -22,10 +22,9 @@
             routerLinkActive="active"
             >Favourites &nbsp;
             <i
-              class="fa-solid fa-star fs-5"
-              size="xlarge"
-              styleClass="mr-2"
+              class="fa-solid fa-star mr-3 p-text-secondary fs-5"
               pBadge
+              severity="danger"
               [value]="
                 (favouritesCount | async)?.favourites?.length?.toString()!
               "
