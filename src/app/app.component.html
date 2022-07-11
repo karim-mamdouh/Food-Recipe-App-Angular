@@ -1,5 +1,8 @@
+<!-- Navbar section -->
 <app-nav-bar></app-nav-bar>
+<!-- Main section -->
 <main>
-  <router-outlet ></router-outlet>
+  <router-outlet></router-outlet>
 </main>
-
+<!-- Footer section -->
+<app-footer *ngIf="!activeURL.includes('auth')"></app-footer>

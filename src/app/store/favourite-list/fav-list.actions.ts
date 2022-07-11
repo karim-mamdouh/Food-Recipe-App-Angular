@@ -9,7 +9,7 @@ export const addFavourite = createAction(
 //Remove favourite item from list, accepts index of object in list
 export const removeFavourite = createAction(
   'REMOVE_FAVOURITE',
-  props<{ payload: number }>()
+  props<{ payload: Favourite }>()
 );
 //Reset favourites list
 export const resetFavourites = createAction('RESET_FAVOURITES');
