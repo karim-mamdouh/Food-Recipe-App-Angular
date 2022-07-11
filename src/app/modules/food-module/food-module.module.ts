@@ -13,7 +13,6 @@ import { BadgeModule } from 'primeng/badge';
 //Components
 import { FoodcardComponent } from './components/food-card/foodcard.component';
 import { FoodrecipeComponent } from './components/recipe-details/foodrecipe.component';
-import { FooterComponent } from '../../components/footer/footer.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { FavListComponent } from './components/fav-list/fav-list.component';
 
@@ -22,7 +21,6 @@ import { FavListComponent } from './components/fav-list/fav-list.component';
     FoodcardComponent,
     FoodrecipeComponent,
     FavListComponent,
-    FooterComponent,
     CategoriesComponent,
   ],
   imports: [
