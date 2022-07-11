@@ -1,1 +1,46 @@
-<p>fav-list works!</p>
+<p-virtualScroller
+  [value]="(favouriteRecipes | async)?.favourites!"
+  scrollHeight="500px"
+  [itemSize]="100"
+>
+  <ng-template pTemplate="header">
+    <div class="flex align-items-center justify-content-center gap-3 flex-wrap">
+      List of Products
+      <p-dropdown
+        placeholder="Sort By"
+        [style]="{ 'min-width': '10em' }"
+      ></p-dropdown>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="item" let-favourite>
+    <div class="product-item container">
+      <figure class="image-container">
+        <img
+          [src]="favourite.recipe.image_url"
+          [alt]="favourite.recipe.title"
+          class="product-image"
+        />
+      </figure>
+      <div class="product-list-detail mt-3 mt-sm-0">
+        <h5 class="mb-2">{{ favourite.recipe.title }}</h5>
+        <i class="pi pi-tag product-category-icon"></i>
+        <span class="product-category">{{ favourite.category }}</span>
+      </div>
+      <div class="product-list-action">
+        <h6 class="mb-2">
+          Social Rank: &nbsp;{{ favourite.recipe.social_rank.toFixed() }}
+        </h6>
+        <div>
+          <p-button (onClick)="goToRecipe(favourite)"
+            ><i class="fa-solid fa-circle-info"></i> &nbsp; Details</p-button
+          >
+          <p-button
+            (onClick)="removeRecipe(favourite)"
+            styleClass="p-button-danger"
+            ><i class="fa-solid fa-ban"></i> &nbsp; Remove</p-button
+          >
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-virtualScroller>
