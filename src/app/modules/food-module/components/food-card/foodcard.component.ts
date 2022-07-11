@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import {
   Favourite,
@@ -17,6 +18,7 @@ export class FoodcardComponent implements OnInit {
   @Input() foodCategory: FoodCategories | null = null;
 
   constructor(
+    private _router: Router,
     private _favStore: Store<{ favourites: { favourites: Array<Favourite> } }>
   ) {}
 
@@ -27,5 +29,8 @@ export class FoodcardComponent implements OnInit {
         payload: { recipe: this.foodData!, category: this.foodCategory! },
       })
     );
+  }
+  onCardClick(recipeID: string): void {
+    this._router.navigate([`food/recipe/${recipeID}`]);
   }
 }
