@@ -1,5 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Recipe } from 'src/app/interfaces/food-category';
+import { Store } from '@ngrx/store';
+import {
+  Favourite,
+  FoodCategories,
+  Recipe,
+} from 'src/app/interfaces/food-category';
+import { addFavourite } from 'src/app/store/favourite-list/fav-list.actions';
 
 @Component({
   selector: 'app-foodcard',
@@ -8,7 +14,18 @@ import { Recipe } from 'src/app/interfaces/food-category';
 })
 export class FoodcardComponent implements OnInit {
   @Input() foodData: Recipe | null = null;
-  constructor() {}
+  @Input() foodCategory: FoodCategories | null = null;
+
+  constructor(
+    private _favStore: Store<{ favourites: { favourites: Array<Favourite> } }>
+  ) {}
 
   ngOnInit(): void {}
+  addToFavourites(): void {
+    this._favStore.dispatch(
+      addFavourite({
+        payload: { recipe: this.foodData!, category: this.foodCategory! },
+      })
+    );
+  }
 }
