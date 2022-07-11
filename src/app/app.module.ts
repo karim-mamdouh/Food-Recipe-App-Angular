@@ -23,6 +23,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ServerErrorComponent } from './components/server-error/server-error.component';
 import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { HomeComponent } from './components/home/home.component';
     NotFoundComponent,
     ServerErrorComponent,
     HomeComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
