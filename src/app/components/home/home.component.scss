@@ -1,0 +1,36 @@
+.background-img {
+  background-image: url("../../../assets/images/login-background.jpg");
+  height: 35rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.BrawseCategoriesButtons {
+  img {
+    width: 12.5rem;
+    height: 9.375rem;
+    border-radius: 10px;
+    box-shadow: 5px 10px 18px #888888;
+  }
+  .CategoryRouter {
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}
+.product-item {
+  .product-item-content {
+    border: 1px solid var(--surface-d);
+    border-radius: 3px;
+    margin: 0.3rem;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .product-image {
+    width: 300px;
+    height: 200px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+}
