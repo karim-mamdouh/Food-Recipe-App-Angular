@@ -18,6 +18,24 @@
           <a
             class="nav-link"
             aria-current="page"
+            routerLink="/food/fav-list"
+            routerLinkActive="active"
+            >Favourites &nbsp;
+            <i
+              class="fa-solid fa-star fs-5"
+              size="xlarge"
+              styleClass="mr-2"
+              pBadge
+              [value]="
+                (favouritesCount | async)?.favourites?.length?.toString()!
+              "
+            ></i
+          ></a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
             routerLink="/food"
             routerLinkActive="active"
             >Categories</a

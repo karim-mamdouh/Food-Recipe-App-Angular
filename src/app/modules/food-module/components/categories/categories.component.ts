@@ -37,12 +37,12 @@ export class CategoriesComponent implements OnInit {
     this.fetchDataFromApi('Pizza');
   }
 
-  onTapChange(activeTapIndex: number) {
+  onTapChange(activeTapIndex: number): void {
     let tapTitle = this.tabview.tabs[activeTapIndex].header;
     this.fetchDataFromApi(tapTitle);
   }
 
-  fetchDataFromApi(category: string) {
+  fetchDataFromApi(category: string): void {
     this._store.dispatch(resetRecipes());
     // Fetch Data from api
     const indexOfCategoryInEnum = Object.keys(FoodCategories).indexOf(category);
@@ -63,7 +63,7 @@ export class CategoriesComponent implements OnInit {
       });
   }
 
-  onCardClick(recipeID: string) {
+  onCardClick(recipeID: string): void {
     this._router.navigate([`food/recipe/${recipeID}`]);
   }
 }
