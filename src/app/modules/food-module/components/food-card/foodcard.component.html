@@ -15,7 +15,7 @@
     <div class="d-flex justify-content-between">
       <p class="my-auto">Rate: {{ foodData.social_rank.toFixed() }}%</p>
       <!-- Save to fav button -->
-      <button type="button" class="favButton">
+      <button type="button" class="favButton" (click)="addToFavourites()">
         <i class="pi pi-bookmark"></i>
       </button>
     </div>

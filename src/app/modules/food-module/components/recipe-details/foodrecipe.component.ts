@@ -22,7 +22,7 @@ export class FoodrecipeComponent implements OnInit {
     this.fetchDataFromApi(this._router.snapshot.params?.['id']);
   }
 
-  fetchDataFromApi(recipeID: string) {
+  fetchDataFromApi(recipeID: string): void {
     // Fetch food Recipt from api
     this._foodApiService.getSpecificRecipe(recipeID).subscribe((response) => {
       this.recipeDetails = response.recipe;
