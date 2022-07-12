@@ -14,12 +14,17 @@
     <div class="infoContainer d-flex my-2 justify-content-center">
       <div class="important-links text-center">
         <p class="my-4 fs-4">Links</p>
-        <ul>
-          <div class="d-flex">
+        <ul class="d-flex">
+          <ng-template [ngIf]="!loggedIn" [ngIfElse]="elseBlock">
             <li class="mx-3"><a routerLink="/auth/login">LogIn</a></li>
             <li class="mx-3"><a routerLink="/auth/register">Register</a></li>
-            <li class="mx-3"><a routerLink="/food/homepage">Category</a></li>
-          </div>
+          </ng-template>
+          <ng-template #elseBlock>
+            <li class="mx-3">
+              <a routerLink="" (click)="logout()">Logout</a>
+            </li>
+          </ng-template>
+          <li class="mx-3"><a routerLink="/food/homepage">Category</a></li>
         </ul>
       </div>
     </div>

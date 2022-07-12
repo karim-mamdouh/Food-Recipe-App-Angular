@@ -23,7 +23,7 @@
             *ngFor="let recipe of (recipeObservable | async)?.recipes"
             [foodData]="recipe"
             [foodCategory]="(recipeObservable | async)?.category!"
-            class="col-lg-3 col-md-4 col-sm-12 col-xs-12 my-4"
+            class="col-xl-3 col-lg-4 col-md-6 my-4"
           ></app-foodcard>
         </div>
       </ng-template>
@@ -36,7 +36,7 @@
             *ngFor="let recipe of (recipeObservable | async)?.recipes"
             [foodData]="recipe"
             [foodCategory]="(recipeObservable | async)?.category!"
-            class="col-lg-3 col-md-4 col-sm-12 col-xs-12 my-4"
+            class="col-xl-3 col-lg-4 col-md-6 my-4"
           ></app-foodcard>
         </div>
       </ng-template>
@@ -46,7 +46,7 @@
       <ng-template #content>
         <div class="row recipes-wrapper__tabview__content-panel pt-4">
           <app-foodcard
-            class="col-lg-3 col-md-4 col-sm-12 col-xs-12 my-4"
+            class="col-xl-3 col-lg-4 col-md-6 my-4"
             *ngFor="let recipe of (recipeObservable | async)?.recipes"
             [foodData]="recipe"
             [foodCategory]="(recipeObservable | async)?.category!"

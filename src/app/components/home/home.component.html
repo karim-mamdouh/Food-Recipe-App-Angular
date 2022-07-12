@@ -47,7 +47,7 @@
   <div class="container">
     <!--Browse Categories  -->
     <div class="container py-5">
-      <h3 class="text-center mb-5">Browse By Categories</h3>
+      <h3 class="text-center mb-5">Our Categories</h3>
       <div
         class="BrawseCategoriesButtons d-lg-flex justify-content-around my-4 d-md-block"
       >
@@ -84,7 +84,10 @@
       [responsiveOptions]="responsiveOptions"
     >
       <ng-template let-recipe pTemplate="item">
-        <div class="product-item">
+        <div
+          class="product-item"
+          (click)="onSearchResultItemClick(recipe.recipe_id)"
+        >
           <div class="product-item-content">
             <div class="mb-3">
               <img
@@ -114,7 +117,10 @@
       [responsiveOptions]="responsiveOptions"
     >
       <ng-template let-recipe pTemplate="item">
-        <div class="product-item">
+        <div
+          class="product-item"
+          (click)="onSearchResultItemClick(recipe.recipe_id)"
+        >
           <div class="product-item-content">
             <div class="mb-3">
               <img
@@ -144,7 +150,10 @@
       [responsiveOptions]="responsiveOptions"
     >
       <ng-template let-recipe pTemplate="item">
-        <div class="product-item">
+        <div
+          class="product-item"
+          (click)="onSearchResultItemClick(recipe.recipe_id)"
+        >
           <div class="product-item-content">
             <div class="mb-3">
               <img
