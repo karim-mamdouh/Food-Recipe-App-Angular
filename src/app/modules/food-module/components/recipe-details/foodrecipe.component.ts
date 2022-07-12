@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RecipeDetails } from 'src/app/interfaces/food-category';
+import { Store } from '@ngrx/store';
+import { Favourite, RecipeDetails } from 'src/app/interfaces/food-category';
 import { FoodAPIService } from 'src/app/services/food-api.service';
 
 @Component({
@@ -9,11 +10,11 @@ import { FoodAPIService } from 'src/app/services/food-api.service';
   styleUrls: ['./foodrecipe.component.scss'],
 })
 export class FoodrecipeComponent implements OnInit {
-  val2: number = 0;
   //Recipe details object to be viewed
   recipeDetails: RecipeDetails | null = null;
 
   constructor(
+    private _favStore: Store<{ favourites: { favourites: Array<Favourite> } }>,
     private _router: ActivatedRoute,
     private _foodApiService: FoodAPIService
   ) {}
