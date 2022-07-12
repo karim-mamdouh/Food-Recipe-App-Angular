@@ -54,7 +54,8 @@ export class LoginComponent implements OnInit {
           alert('Welcome back');
           //Set token in local storage to true
           localStorage.setItem('token', JSON.stringify('true'));
-          this._router.navigate(['/']);
+          //Reload page and navigate to home page
+          window.location.href = '/';
         } else {
           alert('Please sign up');
         }
