@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +26,10 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls;
   }
 
-  constructor(private _loginFormBuilder: FormBuilder) {}
+  constructor(
+    private _loginFormBuilder: FormBuilder,
+    private _router: Router
+  ) {}
 
   ngOnInit(): void {}
 
@@ -48,11 +52,14 @@ export class LoginComponent implements OnInit {
         );
         if (check) {
           alert('Welcome back');
+          //Set token in local storage to true
+          localStorage.setItem('token', JSON.stringify('true'));
+          this._router.navigate(['/']);
         } else {
-          alert('Please register');
+          alert('Please sign up');
         }
       } else {
-        alert('Please register');
+        alert('Please sign up');
       }
     }
   }

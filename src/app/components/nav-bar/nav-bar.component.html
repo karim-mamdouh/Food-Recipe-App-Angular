@@ -1,6 +1,17 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+<nav class="navbar navbar-expand-lg bg-light navbar-light sticky-top">
   <div class="container">
-    <a class="navbar-brand" routerLink="/">Food App</a>
+    <!-- Logo -->
+    <a class="navbar-brand" routerLink="/">
+      <figure class="d-inline m-0">
+        <img
+          src="../../../assets/icons/icon-72x72.png"
+          alt="Logo"
+          class="img-fluid w-25"
+        />
+      </figure>
+      <span class="d-inline-block">&nbsp; Yummy🍽Taste</span>
+    </a>
+    <!-- Responsive button -->
     <button
       class="navbar-toggler"
       type="button"
@@ -14,15 +25,31 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <!-- Recipes -->
+        <li
+          class="nav-item mx-2 d-flex justify-content-center align-items-center red-hover"
+        >
+          <a
+            class="nav-link"
+            aria-current="page"
+            routerLink="/food"
+            routerLinkActive="active"
+          >
+            <b>Recipes</b>
+          </a>
+        </li>
+        <!-- Favorites -->
+        <li
+          class="nav-item ms-2 me-3 d-flex justify-content-center align-items-center"
+        >
           <a
             class="nav-link"
             aria-current="page"
             routerLink="/food/fav-list"
             routerLinkActive="active"
-            >Favourites &nbsp;
+          >
             <i
-              class="fa-solid fa-star mr-3 p-text-secondary fs-5"
+              class="pi pi-bookmark-fill mr-3 p-text-secondary fs-4"
               pBadge
               severity="danger"
               [value]="
@@ -31,32 +58,20 @@
             ></i
           ></a>
         </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            aria-current="page"
-            routerLink="/food"
-            routerLinkActive="active"
-            >Categories</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            aria-current="page"
-            routerLink="/auth/login"
-            routerLinkActive="active"
-            >Login</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            aria-current="page"
-            routerLink="/auth/register"
-            routerLinkActive="active"
-            >Register</a
-          >
+        <!-- User button -->
+        <li
+          class="nav-item mx-2 d-flex justify-content-center align-items-center"
+        >
+          <button
+            pButton
+            pRipple
+            type="button"
+            icon="pi pi-user"
+            class="p-button-rounded p-button p-button-danger"
+            (click)="menu.toggle($event)"
+          ></button>
+
+          <p-menu #menu [popup]="true" [model]="items"></p-menu>
         </li>
       </ul>
     </div>

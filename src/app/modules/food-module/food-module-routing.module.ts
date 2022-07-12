@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FoodrecipeComponent } from './components/recipe-details/foodrecipe.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { FavListComponent } from './components/fav-list/fav-list.component';
+import { AuthGuardGuard } from 'src/app/guards/auth-guard.guard';
 
 const routes: Routes = [
   //Default route
@@ -12,10 +13,15 @@ const routes: Routes = [
   //Categories route
   { path: 'categories', component: CategoriesComponent },
   //Recipe details route
-  { path: 'recipe/:id', component: FoodrecipeComponent },
+  {
+    path: 'recipe/:id',
+    canActivate: [AuthGuardGuard],
+    component: FoodrecipeComponent,
+  },
   //Favorite recipies list route
   {
     path: 'fav-list',
+    canActivate: [AuthGuardGuard],
     component: FavListComponent,
   },
 ];
