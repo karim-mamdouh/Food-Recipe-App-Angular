@@ -10,11 +10,38 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
+  //Observable for favourites store array count
   favouritesCount: Observable<{ favourites: Array<Favourite> }>;
-  // array of items in the menu: login & register
+  // Array of items in the menu: login & register
   items: MenuItem[] = [
     {
-      items: [
+      items: this.userItems(),
+    },
+  ];
+
+  constructor(
+    private _favStore: Store<{ favourites: { favourites: Array<Favourite> } }>,
+    private _router: Router
+  ) {
+    this.favouritesCount = this._favStore.select('favourites');
+  }
+
+  ngOnInit(): void {}
+  //Array that sets content in user dropdown menu based on local storage token
+  userItems(): Array<MenuItem> {
+    let items: Array<MenuItem> = [];
+    let token = JSON.parse(localStorage.getItem('token')!);
+    if (token) {
+      items = [
+        {
+          label: 'Logout',
+          command: () => {
+            this.logout();
+          },
+        },
+      ];
+    } else {
+      items = [
         {
           label: 'Sign In',
           command: () => {
@@ -27,17 +54,17 @@ export class NavBarComponent implements OnInit {
             this.navigate('/auth/register');
           },
         },
-      ],
-    },
-  ];
-  constructor(
-    private _favStore: Store<{ favourites: { favourites: Array<Favourite> } }>,
-    private _router: Router
-  ) {
-    this.favouritesCount = this._favStore.select('favourites');
+      ];
+    }
+    return items;
   }
-  ngOnInit(): void {}
+  //Function that navigates to input URL
   navigate(path: string): void {
     this._router.navigate([path]);
+  }
+  //Function that logs the user out by setting token to false
+  logout(): void {
+    localStorage.setItem('token', JSON.stringify(false));
+    window.location.href = '/';
   }
 }
