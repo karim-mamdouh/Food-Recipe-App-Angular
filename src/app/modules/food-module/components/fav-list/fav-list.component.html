@@ -1,8 +1,9 @@
 <div class="card">
   <p-virtualScroller
     [value]="(favouriteRecipes | async)?.favourites!"
-    scrollHeight="500px"
+    scrollHeight="600px"
     [itemSize]="100"
+    styleClass="mb-5"
   >
     <ng-template pTemplate="header">
       <div
