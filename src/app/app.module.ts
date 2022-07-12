@@ -12,6 +12,7 @@ import { CardModule } from 'primeng/card';
 import { BadgeModule } from 'primeng/badge';
 import { CarouselModule } from 'primeng/carousel';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuModule } from 'primeng/menu';
 //Reducers
 import { recipiesReducer } from './store/food-recipies/food-recipies.reducers';
 import { favouritesReducer } from './store/favourite-list/fav-list.reducers';
@@ -48,6 +49,7 @@ import { FilterRecieptsPipe } from './pipes/filter-reciepts.pipe';
     CardModule,
     BadgeModule,
     HttpClientModule,
+    MenuModule,
     StoreModule.forRoot({
       recipies: recipiesReducer,
       favourites: favouritesReducer,

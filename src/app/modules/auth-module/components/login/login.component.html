@@ -1,6 +1,8 @@
 <section class="background-img pt-4">
-  <div class="container view-height card w-25 mx-auto form-style">
-    <h1 class="text-center pt-5 text-danger mt-3">Login</h1>
+  <div class="container view-height card mx-auto form-style">
+    <h1 class="text-center pt-3 pt-xl-5 text-danger mt-2 mb-3 mb-xl-0">
+      Login
+    </h1>
     <form
       [formGroup]="loginForm"
       class="p-1 h-100 d-flex flex-column justify-content-evenly"
@@ -50,13 +52,14 @@
             ><i class="fa-solid fa-lock"></i
           ></span>
           <input
-            type="text"
+            type="password"
             pInputText
             class="p-inputtext-sm"
             placeholder="Password"
             formControlName="password"
           />
         </div>
+
         <!-- Password errors -->
         <ng-template
           [ngIf]="
@@ -78,13 +81,18 @@
         pButton
         pRipple
         type="submit"
-        label="Login"
-        class="p-button-raised p-button-danger w-100 mb-5"
+        label="Sign in"
+        class="p-button-raised p-button-danger w-100 mt-3"
       ></button>
     </form>
     <!-- Form ends -->
-    <!-- <p-divider layout="horizontal">
-      <b>OR</b>
-    </p-divider> -->
+    <!-- Register new account section -->
+    <p-divider align="center" layout="horizontal" class="mb-3">
+      <b class="text-danger">OR</b>
+    </p-divider>
+    <p class="text-dark text-center mb-5">
+      Don't have an account?
+      <a routerLink="/auth/register" class="text-danger">Sign up</a>
+    </p>
   </div>
 </section>
