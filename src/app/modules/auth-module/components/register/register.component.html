@@ -1,8 +1,8 @@
 <section class="container-fluid">
   <div class="row view-height">
-    <div class="background-img col-6"></div>
-    <div class="col-6 form-style">
-      <h1 class="text-center pt-3 text-danger">Register</h1>
+    <div class="background-img col-6 d-none d-lg-block"></div>
+    <div class="col-lg-6 col-12 form-style">
+      <h1 class="text-center pt-4 text-danger">Register</h1>
       <form
         [formGroup]="registerForm"
         (ngSubmit)="submitReactiveForm()"
@@ -10,7 +10,7 @@
       >
         <div class="row">
           <!-- First name input -->
-          <div class="col-6">
+          <div class="col-sm-6">
             <div class="grid p-fluid">
               <div class="col-12 md:col-4">
                 <div class="p-inputgroup">
@@ -54,7 +54,7 @@
             </div>
           </div>
           <!-- last name input-->
-          <div class="col-6">
+          <div class="col-sm-6 mt-3 mt-sm-0">
             <div class="grid p-fluid">
               <div class="col-12 md:col-4">
                 <div class="p-inputgroup">
@@ -142,7 +142,7 @@
 
         <!-- Gender dropdown menu-->
         <div class="row">
-          <div class="col-6">
+          <div class="col-sm-6">
             <div class="grid p-fluid">
               <div class="col-12 md:col-4">
                 <div>
@@ -172,7 +172,7 @@
             </ng-template>
           </div>
           <!-- Birthdate calender-->
-          <div class="col-6">
+          <div class="col-sm-6 mt-3 mt-sm-0">
             <div class="grid p-fluid">
               <div class="col-12 md:col-4">
                 <div class="p-inputgroup">
@@ -245,7 +245,7 @@
         </div>
         <!-- password -->
         <div class="row">
-          <div class="col-6">
+          <div class="col-sm-6">
             <div class="grid p-fluid">
               <div class="col-12 md:col-4">
                 <div class="p-inputgroup">
@@ -283,7 +283,7 @@
             </div>
           </div>
           <!-- Confirm password -->
-          <div class="col-6">
+          <div class="col-sm-6 mt-3 mt-sm-0">
             <div class="grid p-fluid">
               <div class="col-12 md:col-4">
                 <div class="p-inputgroup">
@@ -328,11 +328,20 @@
             pButton
             pRipple
             type="submit"
-            label="Register"
-            class="p-button-raised p-button-danger w-100"
+            label="Sign up"
+            class="p-button-raised p-button-danger w-75 mx-auto"
           ></button>
         </div>
       </form>
+      <!-- Form ends -->
+      <!-- Have account section -->
+      <p-divider align="center" layout="horizontal" class="mb-3">
+        <b class="text-danger">OR</b>
+      </p-divider>
+      <p class="text-dark text-center mb-5">
+        Already have an account?
+        <a routerLink="/auth/login" class="text-danger">Sign in</a>
+      </p>
     </div>
   </div>
 </section>
