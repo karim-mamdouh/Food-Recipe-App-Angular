@@ -5,6 +5,25 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+.search__wrapper__input {
+  padding: 15px;
+  max-width: 500px;
+}
+.search_result_list_wrapper {
+  background-color: #fff;
+}
+.search__wrapper__category {
+  padding: 15px 10px;
+  max-width: 100px;
+  text-align: center;
+  background-position: right 4.55rem center !important;
+}
+.resultList {
+  background-color: transparent;
+  max-width: 37.5rem;
+  max-height: 18.75rem;
+  overflow-y: auto;
+}
 .BrawseCategoriesButtons {
   img {
     width: 12.5rem;

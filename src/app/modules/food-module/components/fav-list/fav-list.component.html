@@ -1,46 +1,83 @@
-<p-virtualScroller
-  [value]="(favouriteRecipes | async)?.favourites!"
-  scrollHeight="500px"
-  [itemSize]="100"
->
-  <ng-template pTemplate="header">
-    <div class="flex align-items-center justify-content-center gap-3 flex-wrap">
-      List of Products
-      <p-dropdown
-        placeholder="Sort By"
-        [style]="{ 'min-width': '10em' }"
-      ></p-dropdown>
-    </div>
-  </ng-template>
-  <ng-template pTemplate="item" let-favourite>
-    <div class="product-item container">
-      <figure class="image-container">
-        <img
-          [src]="favourite.recipe.image_url"
-          [alt]="favourite.recipe.title"
-          class="product-image"
-        />
-      </figure>
-      <div class="product-list-detail mt-3 mt-sm-0">
-        <h5 class="mb-2">{{ favourite.recipe.title }}</h5>
-        <i class="pi pi-tag product-category-icon"></i>
-        <span class="product-category">{{ favourite.category }}</span>
+<!-- main card container -->
+<div class="card">
+  <!-- primeNg contsiner -->
+  <p-virtualScroller
+    [value]="(favouriteRecipes | async)?.favourites!"
+    scrollHeight="600px"
+    [itemSize]="100"
+    styleClass="mb-5"
+  >
+    <!-- sorted by input -->
+    <ng-template pTemplate="header">
+      <div
+        class="flex align-items-center justify-content-center gap-3 flex-wrap container"
+      >
+        List of Products
+        <p-dropdown
+          placeholder="Sort By"
+          [style]="{ 'min-width': '10em' }"
+        ></p-dropdown>
       </div>
-      <div class="product-list-action">
-        <h6 class="mb-2">
-          Social Rank: &nbsp;{{ favourite.recipe.social_rank.toFixed() }}
-        </h6>
-        <div>
-          <p-button (onClick)="goToRecipe(favourite)"
-            ><i class="fa-solid fa-circle-info"></i> &nbsp; Details</p-button
-          >
-          <p-button
-            (onClick)="removeRecipe(favourite)"
-            styleClass="p-button-danger"
-            ><i class="fa-solid fa-ban"></i> &nbsp; Remove</p-button
-          >
+    </ng-template>
+    <!-- item list container -->
+    <ng-template pTemplate="item" let-favourite>
+      <div class="product-item container">
+        <!-- food image -->
+        <figure class="image-container">
+          <img
+            [src]="favourite.recipe.image_url"
+            [alt]="favourite.recipe.title"
+            class="product-image img-fluid"
+          />
+        </figure>
+        <!-- food details -->
+        <div class="product-list-detail mt-3 mt-sm-0">
+          <h5 class="product-name mb-2">{{ favourite.recipe.title }}</h5>
+          <i class="pi pi-tag product-category-icon"></i>
+          <span class="product-category">{{ favourite.category }}</span>
+        </div>
+
+        <!-- button group -->
+        <div class="product-list-action">
+          <h6 class="mb-2">
+            Social Rank: &nbsp;{{ favourite.recipe.social_rank.toFixed() }}
+          </h6>
+
+          <!-- buttons display at large screen -->
+          <div class="buttons m-auto">
+            <p-button
+              (onClick)="goToRecipe(favourite)"
+              styleClass="me-3"
+              class="pp-button"
+              ><i class="fa-solid fa-circle-info"></i> &nbsp; Details</p-button
+            >
+
+            <p-button
+              (onClick)="removeRecipe(favourite)"
+              styleClass="p-button-danger"
+              ><i class="fa-solid fa-ban"></i> &nbsp; Remove</p-button
+            >
+          </div>
+
+          <!-- small buttons display at md and small screens -->
+          <div class="buttons-sm m-auto">
+            <button
+              type="button"
+              class="favButton btn btn-primary me-4"
+              (click)="goToRecipe(favourite)"
+            >
+              <i class="fa-solid fa-circle-info"></i>
+            </button>
+            <button
+              type="button"
+              class="favButton btn btn-danger"
+              (click)="removeRecipe(favourite)"
+            >
+              <i class="fa-solid fa-ban"></i>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </ng-template>
-</p-virtualScroller>
+    </ng-template>
+  </p-virtualScroller>
+</div>
