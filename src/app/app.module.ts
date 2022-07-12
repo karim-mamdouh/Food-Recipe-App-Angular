@@ -24,7 +24,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ServerErrorComponent } from './components/server-error/server-error.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { FilterRecieptsPipe } from './components/home/filter-reciepts.pipe';
+//Pipes
+import { FilterRecieptsPipe } from './pipes/filter-reciepts.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { FilterRecieptsPipe } from './components/home/filter-reciepts.pipe';
     ServerErrorComponent,
     HomeComponent,
     FooterComponent,
-    FilterRecieptsPipe
+    FilterRecieptsPipe,
   ],
   imports: [
     BrowserModule,

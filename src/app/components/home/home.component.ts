@@ -9,16 +9,16 @@ import { FoodAPIService } from 'src/app/services/food-api.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  pizzaRecipes = {} as FoodReducerTemplate;
-  saladRecipes = {} as FoodReducerTemplate;
-  beefRecipes = {} as FoodReducerTemplate;
+  pizzaRecipes = {} as FoodReducerTemplate; //Object to be filled in carousel of featured pizza
+  saladRecipes = {} as FoodReducerTemplate; //Object to be filled in carousel of featured salad
+  beefRecipes = {} as FoodReducerTemplate; //Object to be filled in carousel of featured Beef
   numberOfFeatured: number = 8; //Number of featured items to be viewed in each category
   searchText: string = '';
-  search_category: string = "Pizza";
-  pizzaData = [] as Recipe[];
-  saladData = [] as Recipe[];
-  beefData = [] as Recipe[];
-  currentSearchData = [] as Recipe[];
+  search_category: string = 'Pizza';
+  pizzaData = [] as Recipe[]; //Array of recipes from API
+  saladData = [] as Recipe[]; //Array of recipes from API
+  beefData = [] as Recipe[]; //Array of recipes from API
+  currentSearchData = [] as Recipe[]; //Container for matching results
 
   //Carousel responsive options
   responsiveOptions = [
@@ -39,10 +39,8 @@ export class HomeComponent implements OnInit {
     },
   ];
 
-  constructor(
-    private _foodAPI: FoodAPIService,
-    private _router: Router
-  ) { }
+  constructor(private _foodAPI: FoodAPIService, private _router: Router) {}
+
   ngOnInit(): void {
     //Fill pizzaRecipes array with unique recipes
     this._foodAPI.getRecipiesByCategory(FoodCategories.Pizza).subscribe(
@@ -60,7 +58,6 @@ export class HomeComponent implements OnInit {
         console.log(error);
       }
     );
-
     //Fill beefRecipes array with unique recipes
     this._foodAPI.getRecipiesByCategory(FoodCategories.Beef).subscribe(
       (res) => {
@@ -90,25 +87,25 @@ export class HomeComponent implements OnInit {
       }
     );
   }
-  // selecting category
+  // Selecting category for searching
   onCategorySelect(searchCategory: string) {
     this.search_category = searchCategory;
     switch (searchCategory) {
-      case "Pizza":
+      case 'Pizza':
         this.currentSearchData = this.pizzaData;
         break;
-      case "Salad":
+      case 'Salad':
         this.currentSearchData = this.saladData;
         break;
-      case "Beef":
+      case 'Beef':
         this.currentSearchData = this.beefData;
         break;
     }
   }
+  //Navigates to selected recipe
   onSearchResultItemClick(recipeID: string) {
     this._router.navigate([`food/recipe/${recipeID}`]);
   }
-
   //Function returns a new array of random unique recipes based on input number
   uniqueRecipesGenerator(
     numberOfRecipes: number,
@@ -116,7 +113,7 @@ export class HomeComponent implements OnInit {
     category: FoodCategories
   ): FoodReducerTemplate {
     let uniqueRecipes: Array<Recipe> = [];
-    for (let i = 0; i < numberOfRecipes;) {
+    for (let i = 0; i < numberOfRecipes; ) {
       let recipeIndex: number = Math.floor(Math.random() * recipes.length);
       if (
         uniqueRecipes.filter(
