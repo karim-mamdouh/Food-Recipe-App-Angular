@@ -1,5 +1,70 @@
 <footer class="bg-dark text-white">
+  <!-- main container -->
   <div class="container py-2">
-    <p>hello from footer</p>
+    <!-- logo  -->
+    <div class="logo my-2 col-12">
+      <a routerLink="/food/homepage">Food App</a>
+    </div>
+    <!-- info container -->
+    <div class="infoContainer d-flex my-2">
+      <div class="col-3"></div>
+      <div class="important-links col-3">
+        <ul>
+          <li><p>Links</p></li>
+          <li><a routerLink="/auth/login">LogIn</a></li>
+          <li><a routerLink="/auth/register">Register</a></li>
+          <li><a routerLink="/food/homepage">Category</a></li>
+        </ul>
+      </div>
+      <div class="information col-3">
+        <ul>
+          <li><p>Information</p></li>
+          <li><a href="">About Us</a></li>
+          <li><a href="">Contact Us</a></li>
+          <li><a href="">privacy policy</a></li>
+          <li><a href="">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="subscribe-area col-3">
+        <p>Subscribe Us</p>
+        <div class="input-group mb-3">
+          <input
+            type="mail"
+            class="form-control"
+            placeholder="Enter your mail"
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+          />
+          <button
+            class="btn btn-outline-secondary text-white mb-auto"
+            type="button"
+            id="button-addon2"
+          >
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- social media -->
+    <hr />
+    <div class="socialMedia d-flex justify-content-center">
+      <a href="https://www.facebook.com/" target="_blank"
+        ><i class="pi pi-facebook"></i
+      ></a>
+      <a href="https://www.instagram.com/" target="_blank"
+        ><i class="pi pi-instagram"></i
+      ></a>
+      <a href="https://www.youtube.com/" target="_blank"
+        ><i class="pi pi-youtube" target="_blank"></i
+      ></a>
+      <a href="https://twitter.com/" target="_blank"
+        ><i class="pi pi-twitter" target="_blank"></i
+      ></a>
+    </div>
+    <!-- copyright -->
+    <div class="copyrights text-center m-3">
+      <p class="__copyrights">©Copyright All rights reserved 2022</p>
+    </div>
   </div>
 </footer>
