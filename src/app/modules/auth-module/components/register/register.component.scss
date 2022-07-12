@@ -8,11 +8,23 @@
   background-color: white;
 }
 .view-height {
-  height: 92.2vh;
+  height: 90vh;
 }
 h1 {
   color: red;
 }
 :host ::ng-deep .ui-datepicker {
   z-index: 99999999999 !important;
+}
+
+@media (min-width: 768px) {
+  .form-style {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 992px) {
+  .form-style {
+    width: 50%;
+  }
 }
