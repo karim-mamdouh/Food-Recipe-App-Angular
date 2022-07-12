@@ -1,14 +1,32 @@
 .background-img {
   background-image: url("../../../../../assets/images/login-background.jpg");
-  height: 92.2vh;
+  height: 91.8vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .form-style {
+  width: 80%;
   color: white;
   opacity: 0.96;
 }
 .view-height {
   height: 80vh;
+}
+
+@media (min-width: 768px) {
+  .form-style {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-style {
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .form-style {
+    width: 25%;
+  }
 }

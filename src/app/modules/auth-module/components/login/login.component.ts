@@ -48,11 +48,13 @@ export class LoginComponent implements OnInit {
         );
         if (check) {
           alert('Welcome back');
+          //Set token in local storage to true
+          localStorage.setItem('token', JSON.stringify('true'));
         } else {
-          alert('Please register');
+          alert('Please sign up');
         }
       } else {
-        alert('Please register');
+        alert('Please sign up');
       }
     }
   }
