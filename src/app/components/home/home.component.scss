@@ -5,6 +5,20 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+.search__wrapper__input{
+  padding: 20px;
+  max-width: 500px; 
+  margin: auto;
+}
+.search_result_list_wrapper{
+  background-color: white;
+}
+.search__wrapper__category{
+
+ margin: auto;
+ padding: 20px 10px;
+ max-width: 150px;
+}
 .BrawseCategoriesButtons {
   img {
     width: 12.5rem;
