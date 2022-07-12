@@ -3,9 +3,17 @@
   <div class="background-img py-5 d-flex">
     <!-- Search Wrapper-->
     <div class="container search__wrapper d-flex">
-      <!-- Search input-->
-      <input [(ngModel)]="searchText" class="form-control search__wrapper__input" type="search"
-        placeholder="Search Recipies" aria-label="Search" />
+      <div class="search_group w-50">
+        <!-- Search input-->
+        <input [(ngModel)]="searchText" class="form-control search__wrapper__input" type="search"
+          placeholder="Search Recipies" aria-label="Search" />
+        <!-- Results List -->
+        <div style="max-height: 300px;overflow-y: auto;" class="bg-white" *ngIf="searchText !== ''">
+          <ul *ngFor="let recipe of currentSearchData| filterRecieptsPipe:currentSearchData:searchText">
+            <li (click)="onSearchResultItemClick(recipe.recipe_id)">{{recipe.title}}</li>
+          </ul>
+        </div>
+      </div>
       <!-- Search Category Select -->
       <select class="form-select search__wrapper__category" [ngModel]="search_category"
         (ngModelChange)="onCategorySelect($event)" value='Pizza' name="search_category"
@@ -15,12 +23,7 @@
         <option value="Beef">Beef</option>
       </select>
     </div>
-    <!-- Results List -->
-    <div style="max-height: 300px;overflow-y: auto;" class="container if text empty bg-white" *ngIf="searchText !== ''">
-      <ul *ngFor="let recipe of currentSearchData| filterRecieptsPipe:currentSearchData:searchText">
-        <li (click)="onSearchResultItemClick(recipe.recipe_id)">{{recipe.title}}</li>
-      </ul>
-    </div>
+   
 
   </div>
   <div class="container">
