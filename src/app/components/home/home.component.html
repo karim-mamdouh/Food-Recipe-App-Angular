@@ -1,1 +1,176 @@
-<p>home works!</p>
+<section class="mb-4">
+  <!-- search form -->
+  <div class="background-img pb-5 d-flex">
+    <!-- Search Wrapper-->
+    <div
+      class="container search__wrapper d-flex justify-content-center align-items-center"
+    >
+      <div class="search_group w-75">
+        <div
+          class="input-group m-auto justify-content-center align-items-center"
+        >
+          <select
+            class="form-select search__wrapper__category btn-danger"
+            [ngModel]="search_category"
+            (ngModelChange)="onCategorySelect($event)"
+            value="Pizza"
+            name="search_category"
+            aria-label="search_category_select"
+          >
+            <option value="Pizza" selected>Pizza</option>
+            <option value="Salad">Salad</option>
+            <option value="Beef">Beef</option>
+          </select>
+          <input
+            type="search"
+            class="form-control w-50 form-control search__wrapper__input"
+            placeholder="Search Recipies"
+            aria-label="Search input with dropdown button"
+            [(ngModel)]="searchText"
+          />
+        </div>
+        <!-- Results List -->
+        <div class="bg-white rounded resultList" *ngIf="searchText !== ''">
+          <ul
+            *ngFor="
+              let recipe of currentSearchData
+                | filterRecieptsPipe: currentSearchData:searchText
+            "
+          >
+            <li (click)="onSearchResultItemClick(recipe.recipe_id)">
+              {{ recipe.title }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!--Browse Categories  -->
+    <div class="container py-5">
+      <h3 class="text-center mb-5">Our Categories</h3>
+      <div
+        class="BrawseCategoriesButtons d-lg-flex justify-content-around my-4 d-md-block"
+      >
+        <div class="CategoryRouter me-4 text-center">
+          <a routerLink="/food">
+            <img src="assets/images/pizza.jpg" alt="pizza" />
+            <p class="my-3">Pizza</p>
+          </a>
+        </div>
+        <div class="CategoryRouter me-4 text-center">
+          <a routerLink="/food">
+            <img src="assets/images/salad.jpg" alt="salad" />
+            <p class="my-3">Salad</p>
+          </a>
+        </div>
+        <div class="CategoryRouter me-4 text-center">
+          <a routerLink="/food">
+            <img src="assets/images/beef.jpg" alt="beef" />
+            <p class="my-3">Beef</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Featured pizza section -->
+    <h2 class="text-center my-4">Featured Pizza Recipes</h2>
+    <p-carousel
+      *ngIf="pizzaRecipes"
+      [value]="pizzaRecipes.recipes"
+      styleClass="custom-carousel"
+      [numVisible]="3"
+      [numScroll]="1"
+      [circular]="true"
+      [autoplayInterval]="3000"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-recipe pTemplate="item">
+        <div
+          class="product-item"
+          (click)="onSearchResultItemClick(recipe.recipe_id)"
+        >
+          <div class="product-item-content">
+            <div class="mb-3">
+              <img
+                [src]="recipe.image_url"
+                [alt]="recipe.title"
+                class="product-image"
+              />
+            </div>
+            <div class="container">
+              <h5 class="mb-1">{{ recipe.title }}</h5>
+              <h6 class="mb-3">{{ recipe.publisher }}</h6>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+    <!-- Fatured beef section -->
+    <h2 class="text-center my-4">Featured Beef Recipes</h2>
+    <p-carousel
+      *ngIf="beefRecipes"
+      [value]="beefRecipes.recipes"
+      styleClass="custom-carousel"
+      [numVisible]="3"
+      [numScroll]="1"
+      [circular]="true"
+      [autoplayInterval]="3000"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-recipe pTemplate="item">
+        <div
+          class="product-item"
+          (click)="onSearchResultItemClick(recipe.recipe_id)"
+        >
+          <div class="product-item-content">
+            <div class="mb-3">
+              <img
+                [src]="recipe.image_url"
+                [alt]="recipe.title"
+                class="product-image"
+              />
+            </div>
+            <div class="container">
+              <h5 class="mb-1">{{ recipe.title }}</h5>
+              <h6 class="mb-3">{{ recipe.publisher }}</h6>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+    <!-- Featured salad section -->
+    <h2 class="text-center my-4">Featured Salad Recipes</h2>
+    <p-carousel
+      *ngIf="saladRecipes"
+      [value]="saladRecipes.recipes"
+      styleClass="custom-carousel"
+      [numVisible]="3"
+      [numScroll]="1"
+      [circular]="true"
+      [autoplayInterval]="3000"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-recipe pTemplate="item">
+        <div
+          class="product-item"
+          (click)="onSearchResultItemClick(recipe.recipe_id)"
+        >
+          <div class="product-item-content">
+            <div class="mb-3">
+              <img
+                [src]="recipe.image_url"
+                [alt]="recipe.title"
+                class="product-image"
+              />
+            </div>
+            <div class="container">
+              <h5 class="mb-2">{{ recipe.title }}</h5>
+              <h6 class="mb-3">{{ recipe.publisher }}</h6>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</section>

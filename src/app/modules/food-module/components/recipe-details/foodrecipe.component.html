@@ -25,16 +25,20 @@
       <!-- Recipe information -->
       <h5>Information</h5>
       <p>Publisher: {{ recipeDetails.publisher }}</p>
-      <p-rating [(ngModel)]="val2" [cancel]="false"></p-rating>
       <div class="links d-flex">
-        <a [href]="recipeDetails.publisher_url" class="btn btn-danger mt-3"
+        <a
+          [href]="recipeDetails.publisher_url"
+          class="btn btn-danger mt-3"
+          target="_blank"
           >Visit publisher</a
         >
-        <a [href]="recipeDetails.source_url" class="btn btn-danger mx-4 mt-3"
+        <a
+          [href]="recipeDetails.source_url"
+          class="btn btn-danger mx-4 mt-3"
+          target="_blank"
           >More details</a
         >
       </div>
     </div>
   </p-fieldset>
 </section>
-<app-footer></app-footer>

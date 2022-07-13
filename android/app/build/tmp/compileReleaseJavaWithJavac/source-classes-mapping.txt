@@ -1,0 +1,8 @@
+io/github/karim_mamdouh/twa/DelegationService.java
+ io.github.karim_mamdouh.twa.DelegationService
+io/github/karim_mamdouh/twa/BuildConfig.java
+ io.github.karim_mamdouh.twa.BuildConfig
+io/github/karim_mamdouh/twa/Application.java
+ io.github.karim_mamdouh.twa.Application
+io/github/karim_mamdouh/twa/LauncherActivity.java
+ io.github.karim_mamdouh.twa.LauncherActivity

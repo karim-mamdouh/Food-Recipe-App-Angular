@@ -1,0 +1,42 @@
+{
+  "packageId": "io.github.karim_mamdouh.twa",
+  "host": "karim-mamdouh.github.io",
+  "name": "Yummy Taste",
+  "launcherName": "Yummy Taste",
+  "display": "fullscreen",
+  "themeColor": "#1976D2",
+  "navigationColor": "#000000",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
+  "backgroundColor": "#FAFAFA",
+  "enableNotifications": true,
+  "startUrl": "/Yummy-Taste-Angular/",
+  "iconUrl": "https://karim-mamdouh.github.io/Yummy-Taste-Angular/assets/icons/icon-512x512.png",
+  "maskableIconUrl": "https://karim-mamdouh.github.io/Yummy-Taste-Angular/assets/icons/icon-512x512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "D:\\Cources\\Front-End and Cross-Platform (ITI)\\Angular\\Projects\\Final Project\\Yummy-Taste-Angular\\android\\android.keystore",
+    "alias": "android"
+  },
+  "appVersionName": "1",
+  "appVersionCode": 1,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://karim-mamdouh.github.io/Yummy-Taste-Angular/manifest.webmanifest",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://karim-mamdouh.github.io/Yummy-Taste-Angular/",
+  "minSdkVersion": 19,
+  "orientation": "default",
+  "fingerprints": [],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "appVersion": "1"
+}

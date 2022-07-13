@@ -1,0 +1,23 @@
+.red-hover {
+  b {
+    color: #6c7a88;
+  }
+
+  b:hover {
+    color: #ea4645;
+  }
+}
+.navbar-brand {
+  font-weight: 500 !important;
+  font-size: 1.8rem;
+}
+
+.logo-img {
+  width: 20%;
+}
+
+@media (max-width: 575px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+}

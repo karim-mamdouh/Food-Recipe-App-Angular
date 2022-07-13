@@ -9,10 +9,11 @@ import { FieldsetModule } from 'primeng/fieldset';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { FoodModuleRoutingModule } from './food-module-routing.module';
+import { BadgeModule } from 'primeng/badge';
+import { VirtualScrollerModule } from 'primeng/virtualscroller';
 //Components
 import { FoodcardComponent } from './components/food-card/foodcard.component';
 import { FoodrecipeComponent } from './components/recipe-details/foodrecipe.component';
-import { FooterComponent } from '../../components/footer/footer.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { FavListComponent } from './components/fav-list/fav-list.component';
 
@@ -21,7 +22,6 @@ import { FavListComponent } from './components/fav-list/fav-list.component';
     FoodcardComponent,
     FoodrecipeComponent,
     FavListComponent,
-    FooterComponent,
     CategoriesComponent,
   ],
   imports: [
@@ -34,6 +34,8 @@ import { FavListComponent } from './components/fav-list/fav-list.component';
     FieldsetModule,
     RatingModule,
     FormsModule,
+    BadgeModule,
+    VirtualScrollerModule,
   ],
   exports: [],
 })

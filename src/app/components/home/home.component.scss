@@ -1,0 +1,56 @@
+.background-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url("../../../assets/images/login-background.jpg");
+  height: 35rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.search__wrapper__input {
+  padding: 15px;
+  max-width: 500px;
+}
+.search_result_list_wrapper {
+  background-color: #fff;
+}
+.search__wrapper__category {
+  padding: 15px 10px;
+  max-width: 100px;
+  text-align: center;
+  background-position: right 4.55rem center !important;
+}
+.resultList {
+  background-color: transparent;
+  max-width: 37.5rem;
+  max-height: 18.75rem;
+  overflow-y: auto;
+}
+.BrawseCategoriesButtons {
+  img {
+    width: 12.5rem;
+    height: 9.375rem;
+    border-radius: 10px;
+    box-shadow: 5px 10px 18px #888888;
+  }
+  .CategoryRouter {
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}
+.product-item {
+  .product-item-content {
+    border: 1px solid var(--surface-d);
+    border-radius: 3px;
+    margin: 0.3rem;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .product-image {
+    width: 300px;
+    height: 200px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+}

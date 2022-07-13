@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+
 import { Store } from '@ngrx/store';
 import { TabView } from 'primeng/tabview';
 import { Observable } from 'rxjs';
@@ -25,7 +25,6 @@ export class CategoriesComponent implements OnInit {
 
   constructor(
     public progressLoaderService: ProgressLoaderService,
-    private _router: Router,
     private _foodApiService: FoodAPIService,
     private _store: Store<{ recipies: FoodReducerTemplate }>
   ) {
@@ -37,12 +36,12 @@ export class CategoriesComponent implements OnInit {
     this.fetchDataFromApi('Pizza');
   }
 
-  onTapChange(activeTapIndex: number) {
+  onTapChange(activeTapIndex: number): void {
     let tapTitle = this.tabview.tabs[activeTapIndex].header;
     this.fetchDataFromApi(tapTitle);
   }
 
-  fetchDataFromApi(category: string) {
+  fetchDataFromApi(category: string): void {
     this._store.dispatch(resetRecipes());
     // Fetch Data from api
     const indexOfCategoryInEnum = Object.keys(FoodCategories).indexOf(category);
@@ -61,9 +60,5 @@ export class CategoriesComponent implements OnInit {
           })
         );
       });
-  }
-
-  onCardClick(recipeID: string) {
-    this._router.navigate([`food/recipe/${recipeID}`]);
   }
 }

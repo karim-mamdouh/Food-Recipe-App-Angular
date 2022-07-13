@@ -16,9 +16,6 @@ export class FoodAPIService {
   }
   //Get a specific recipe details using recipe id
   getSpecificRecipe(recipedID: string): Observable<any> {
-    if (!Number(recipedID)) {
-      throw new Error('Wrong data input, value should be ID of recipe');
-    }
     return this._httpFood.get(`${this._baseURL}get?rId=${recipedID}`);
   }
 }
