@@ -3,7 +3,6 @@
   "short_name": "Yummy Taste",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
-  "description": "App to show food recipes based on categories",
   "display": "standalone",
   "id": "./",
   "scope": "./",

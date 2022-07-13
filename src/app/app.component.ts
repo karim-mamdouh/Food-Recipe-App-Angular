@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { SwUpdate } from '@angular/service-worker';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +8,11 @@ import { SwUpdate } from '@angular/service-worker';
 })
 export class AppComponent {
   activeURL: string = '';
-  title = 'FoodApp';
+  title = 'Yummy Taste';
 
-  constructor(private _updates: SwUpdate, private _router: Router) {}
+  constructor(private _router: Router) {}
 
   ngOnInit(): void {
-    this._updates.available.subscribe(() => {
-      this._updates.activateUpdate().then(() => document.location.reload());
-    });
     this._router.events.subscribe((event: any) => {
       if (event.url !== undefined && event.type === 1)
         this.activeURL = event.url;

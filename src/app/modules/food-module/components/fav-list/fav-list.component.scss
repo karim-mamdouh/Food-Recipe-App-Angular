@@ -111,6 +111,12 @@
   }
 }
 
+.card {
+  h1 {
+    height: 60vh;
+  }
+}
+
 @media screen and (min-width: 960px) {
   .buttons-sm {
     display: none;
