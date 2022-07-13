@@ -1,0 +1,4 @@
+#Thu Jul 14 00:00:11 EET 2022
+base.0=D\:\\Cources\\Front-End and Cross-Platform (ITI)\\Angular\\Projects\\Final Project\\Yummy-Taste-Angular\\android\\app\\build\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
