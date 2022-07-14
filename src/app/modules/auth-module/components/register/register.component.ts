@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ConfirmPasswordValidator } from './validators/confirm-password.valdators';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -56,9 +58,16 @@ export class RegisterComponent implements OnInit {
   get controlValidation() {
     return this.registerForm.controls;
   }
-  constructor(private _registerFormBuilder: FormBuilder) {}
+  constructor(
+    private _registerFormBuilder: FormBuilder,
+    private _router: Router
+  ) {}
 
   ngOnInit(): void {}
+  ngOnDestroy(): void {
+    this.registerForm.reset();
+  }
+
   submitReactiveForm(): void {
     //Check for register form if not valid
     if (this.registerForm.status !== 'INVALID') {
@@ -76,9 +85,11 @@ export class RegisterComponent implements OnInit {
           JSON.stringify([this.registerForm.value])
         );
       }
+      alert('Account created successfully');
       //Empty form data
       this.registerForm.reset();
       this.showErrors = false;
+      this._router.navigate(['/auth/login']);
     } else {
       this.showErrors = true;
     }

@@ -16,6 +16,13 @@ export class FooterComponent implements OnInit {
   //Function to logout user by setting token to false and refreshing page
   logout(): void {
     localStorage.setItem('token', JSON.stringify(false));
-    window.location.href = '/';
+    if (window.location.href.includes('github')) {
+      let temp = window.location.href;
+      let base = temp.substring(0, temp.indexOf('io/') + 3);
+      let url = temp.replace(base, '');
+      window.location.href = base + url.substring(0, url.indexOf('/') + 1);
+    } else {
+      window.location.href = '/';
+    }
   }
 }
