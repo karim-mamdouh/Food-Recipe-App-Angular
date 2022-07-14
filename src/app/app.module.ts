@@ -22,7 +22,6 @@ import { interceptorProviders } from './services/interceptors/interceptor-provid
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { ServerErrorComponent } from './components/server-error/server-error.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 //Pipes
@@ -33,7 +32,6 @@ import { FilterRecieptsPipe } from './pipes/filter-reciepts.pipe';
     AppComponent,
     NavBarComponent,
     NotFoundComponent,
-    ServerErrorComponent,
     HomeComponent,
     FooterComponent,
     FilterRecieptsPipe,

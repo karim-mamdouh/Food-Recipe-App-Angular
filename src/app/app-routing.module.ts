@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 //Components
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { ServerErrorComponent } from './components/server-error/server-error.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
@@ -25,8 +24,6 @@ const routes: Routes = [
         (module) => module.FoodModuleModule
       ),
   },
-  //Server error route
-  { path: 'server-error', component: ServerErrorComponent },
   //Wrong path route
   { path: '**', component: NotFoundComponent },
 ];

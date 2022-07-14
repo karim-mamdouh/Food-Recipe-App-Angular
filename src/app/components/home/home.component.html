@@ -30,7 +30,10 @@
           />
         </div>
         <!-- Results List -->
-        <div class="bg-white rounded resultList" *ngIf="searchText !== ''">
+        <div
+          class="bg-white rounded resultList mx-auto"
+          *ngIf="searchText !== ''"
+        >
           <ul
             *ngFor="
               let recipe of currentSearchData
