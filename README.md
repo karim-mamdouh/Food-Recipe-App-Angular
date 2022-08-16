@@ -2,7 +2,7 @@
 
 Recipes web application where you can view and save your favourite recipes
 
-## Current Features
+## Features
 
 - User authentication 🗝
 - Recipes by category 📄
