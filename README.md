@@ -2,7 +2,7 @@
 
 Recipes web application where you can view and save your favourite recipes
 
-## Features
+## 📝 Features
 
 - User authentication 🗝
 - Recipes by category 📄
@@ -11,7 +11,7 @@ Recipes web application where you can view and save your favourite recipes
 - Recipes search 🔍
 
 
-## Technologies & Packages Used
+## 🛠 Technologies & Packages Used
 
 <div>
 <a href="https://angular.io/"><img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" /></a>
